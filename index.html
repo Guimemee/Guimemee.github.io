@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guilherme Macário // Cyber Portfolio & Systems Engineer</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter, Fira Code & Orbitron -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Default Theme: Crimson Cyber Studio (Mascot Edition) */
+      --color-primary: #ff1e42;
+      --color-primary-rgb: 255, 30, 66;
+      --color-primary-glow: rgba(255, 30, 66, 0.45);
+      
+      --color-secondary: #00d2ff;
+      --color-secondary-rgb: 0, 210, 255;
+      --color-secondary-glow: rgba(0, 210, 255, 0.35);
+
+      --color-accent: #9d4edd;
+      
+      --bg-space: #07090e;
+      --bg-card: #0c0f17;
+      --bg-card-surface: #121622;
+      --border-panel: rgba(255, 30, 66, 0.28);
+      --border-card-hover: rgba(255, 30, 66, 0.65);
+    }
+
+    /* Matrix Hacker Theme */
+    body.theme-matrix {
+      --color-primary: #00ff66;
+      --color-primary-rgb: 0, 255, 102;
+      --color-primary-glow: rgba(0, 255, 102, 0.45);
+      
+      --color-secondary: #38bdf8;
+      --color-secondary-rgb: 56, 189, 248;
+      --color-secondary-glow: rgba(56, 189, 248, 0.35);
+
+      --color-accent: #a3e635;
+      --bg-space: #050a06;
+      --bg-card: #08110a;
+      --bg-card-surface: #0e1a12;
+      --border-panel: rgba(0, 255, 102, 0.28);
+      --border-card-hover: rgba(0, 255, 102, 0.65);
+    }
+
+    /* Cyberpunk 2077 Theme */
+    body.theme-cyberpunk {
+      --color-primary: #00f0ff;
+      --color-primary-rgb: 0, 240, 255;
+      --color-primary-glow: rgba(0, 240, 255, 0.45);
+      
+      --color-secondary: #ff007f;
+      --color-secondary-rgb: 255, 0, 127;
+      --color-secondary-glow: rgba(255, 0, 127, 0.35);
+
+      --color-accent: #ffe600;
+      --bg-space: #090812;
+      --bg-card: #100e1e;
+      --bg-card-surface: #18152c;
+      --border-panel: rgba(0, 240, 255, 0.3);
+      --border-card-hover: rgba(255, 0, 127, 0.65);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-space);
+      color: #e6edf3;
+      overflow-x: hidden;
+      min-height: 100vh;
+      transition: background-color 0.5s ease;
+    }
+
+    .font-mono-code {
+      font-family: 'Fira Code', monospace;
+    }
+    
+    .font-cyber {
+      font-family: 'Orbitron', 'Inter', sans-serif;
+    }
+
+    /* Glow Card Styling with dynamic variables */
+    .glow-card {
+      position: relative;
+      background: radial-gradient(circle at 85% 20%, rgba(var(--color-primary-rgb), 0.12), transparent 50%),
+                  radial-gradient(circle at 15% 85%, rgba(var(--color-secondary-rgb), 0.08), transparent 45%),
+                  var(--bg-card);
+      border: 1px solid var(--border-panel);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9),
+                  0 0 40px -5px var(--color-primary-glow);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    }
+
+    .glow-card:hover {
+      border-color: var(--border-card-hover);
+      box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.95),
+                  0 0 55px 5px var(--color-primary-glow);
+    }
+
+    /* Laser Scanner Line */
+    .scanline-beam {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, 
+        rgba(var(--color-primary-rgb), 0) 0%, 
+        rgba(var(--color-secondary-rgb), 0.9) 25%, 
+        var(--color-primary) 50%, 
+        rgba(var(--color-secondary-rgb), 0.9) 75%, 
+        rgba(var(--color-primary-rgb), 0) 100%
+      );
+      box-shadow: 0 0 20px 5px var(--color-primary), 0 0 40px 10px var(--color-secondary);
+      pointer-events: none;
+      z-index: 40;
+      transform: translateX(-15px);
+      opacity: 0;
+    }
+
+    /* Mascot Ambient Floating Animation */
+    @keyframes float-breathing {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-9px) rotate(0.8deg);
+      }
+    }
+
+    .mascot-floating {
+      animation: float-breathing 4.5s ease-in-out infinite;
+    }
+
+    /* Equalizer Pulse animation in headphones */
+    @keyframes eq-pulse {
+      0%, 100% { height: 4px; }
+      50% { height: 18px; }
+    }
+
+    .eq-bar-1 { animation: eq-pulse 0.7s ease-in-out infinite 0.1s; }
+    .eq-bar-2 { animation: eq-pulse 0.6s ease-in-out infinite 0.25s; }
+    .eq-bar-3 { animation: eq-pulse 0.8s ease-in-out infinite 0.4s; }
+    .eq-bar-4 { animation: eq-pulse 0.5s ease-in-out infinite 0.15s; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090c13;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1c2230;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-primary);
+    }
+  </style>
+</head>
+
+<body class="flex flex-col items-center justify-start p-3 sm:p-6 md:p-8 select-none min-h-screen">
+
+  <!-- Top Global Header & Controls -->
+  <header class="w-full max-w-5xl mb-5 flex flex-wrap items-center justify-between gap-4 bg-[#0e121b]/95 backdrop-blur-md border border-[#212736] px-5 py-3.5 rounded-2xl shadow-2xl">
+    <div class="flex items-center gap-3">
+      <!-- Mascot Avatar Icon in Bar -->
+      <a href="https://github.com/Guimemee" target="_blank" class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-[#161b26] to-[#252d3d] border border-[var(--color-primary)] flex items-center justify-center shadow-lg shadow-[var(--color-primary-glow)] overflow-hidden group">
+        <svg class="w-7 h-7 text-[var(--color-primary)] group-hover:scale-110 transition-all duration-300" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="50" r="38" fill="#111520" stroke="currentColor" stroke-width="4"/>
+          <!-- Helmet visor -->
+          <rect x="25" y="35" width="50" height="30" rx="10" fill="#05070a"/>
+          <!-- Eyes -->
+          <polygon points="32,46 44,42 41,52" fill="currentColor"/>
+          <polygon points="68,46 56,42 59,52" fill="currentColor"/>
+          <!-- Jagged mouth -->
+          <polyline points="38,58 43,62 48,58 52,62 57,58 62,62" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+
+      <div>
+        <h1 class="text-sm font-semibold tracking-wide text-white flex items-center gap-2 font-cyber">
+          GUILHERME MACÁRIO // CYBER CORE
+          <span class="text-[10px] font-mono-code px-2 py-0.5 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30 font-bold">
+            FIAP • ENG. COMPUTAÇÃO
+          </span>
+        </h1>
+        <p class="text-xs text-gray-400">Engenharia de Computação • Supply Chain, Data & Cloud Architect</p>
+      </div>
+    </div>
+
+    <!-- Theme & Action Buttons -->
+    <div class="flex items-center flex-wrap gap-2.5">
+      
+      <!-- Theme Switcher -->
+      <div class="flex items-center bg-[#080b12] border border-[#232938] rounded-xl p-1 text-xs">
+        <button id="theme-btn-crimson" class="theme-btn px-2.5 py-1 rounded-lg text-xs font-mono-code transition bg-[var(--color-primary)]/20 text-[var(--color-primary)] font-bold border border-[var(--color-primary)]/40" title="Tema Vermelho Carmesim">
+          Crimson
+        </button>
+        <button id="theme-btn-matrix" class="theme-btn px-2.5 py-1 rounded-lg text-xs font-mono-code transition text-gray-400 hover:text-white" title="Tema Matrix Terminal">
+          Matrix
+        </button>
+        <button id="theme-btn-cyberpunk" class="theme-btn px-2.5 py-1 rounded-lg text-xs font-mono-code transition text-gray-400 hover:text-white" title="Tema Neon Cyberpunk 2077">
+          Cyberpunk
+        </button>
+      </div>
+
+      <!-- Audio Synth Toggle -->
+      <button id="btn-sound-toggle" class="flex items-center gap-1.5 bg-[#080b12] hover:bg-[#151a26] border border-[#232938] px-3 py-1.5 rounded-xl text-xs text-gray-300 transition" title="Alternar sintetizador de áudio">
+        <svg id="sound-icon-on" class="w-3.5 h-3.5 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <svg id="sound-icon-off" class="w-3.5 h-3.5 text-gray-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+        <span id="sound-text">SFX Audio</span>
+      </button>
+
+      <!-- Customization Drawer Trigger -->
+      <button id="btn-edit-profile" class="flex items-center gap-1.5 bg-[#080b12] hover:bg-[#151a26] border border-[#232938] px-3 py-1.5 rounded-xl text-xs text-[var(--color-secondary)] transition font-mono-code">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+        </svg>
+        <span>Customizar</span>
+      </button>
+
+      <!-- Replay Animation Button -->
+      <button id="btn-replay" class="flex items-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-rose-600 hover:brightness-110 text-white font-medium px-4 py-1.5 rounded-xl text-xs shadow-lg shadow-[var(--color-primary-glow)] transition active:scale-95 font-mono-code font-bold">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+        </svg>
+        <span>Decodificar</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="w-full max-w-5xl flex flex-col items-center space-y-6">
+    
+    <!-- Outer GitHub Window Container -->
+    <div class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl overflow-hidden shadow-2xl">
+      
+      <!-- Top Titlebar / Terminal Tab Bar -->
+      <div class="bg-[#0e121b] border-b border-[#232938] px-4 py-2.5 flex items-center justify-between text-xs text-gray-400">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-sm"></span>
+          <span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-sm"></span>
+          <span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block shadow-sm"></span>
+          <span class="ml-2 font-mono-code text-[11px] text-gray-400 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+            </svg>
+            <span id="display-user-handle">github.com/Guimemee/README.md</span>
+          </span>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <!-- Active Mascot Mood pill in titlebar -->
+          <div class="flex items-center gap-1.5 text-[11px] font-mono-code px-2 py-0.5 rounded bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-ping"></span>
+            <span>MASCOT: <b id="mascot-mood-label">MISCHIEVOUS</b></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 sm:p-5 md:p-6 bg-[#07090e]">
+        
+        <!-- HERO CARD (The requested Decryptor section) -->
+        <div id="hero-card" class="glow-card relative rounded-2xl overflow-hidden p-5 sm:p-7 md:p-9 border">
+          
+          <!-- Laser Beam Sweep element -->
+          <div id="scan-beam" class="scanline-beam"></div>
+
+          <!-- Matrix Overlay Canvas for raining cyber characters -->
+          <canvas id="matrix-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-30 opacity-60"></canvas>
+
+          <!-- Ambient Glow Blurs -->
+          <div class="absolute -top-32 -right-32 w-80 h-80 rounded-full blur-3xl pointer-events-none bg-[var(--color-primary)] opacity-20"></div>
+          <div class="absolute -bottom-32 -left-32 w-80 h-80 rounded-full blur-3xl pointer-events-none bg-[var(--color-secondary)] opacity-15"></div>
+
+          <!-- File Tag & System Info Header -->
+          <div class="relative z-20 flex items-center justify-between mb-6 pb-2.5 border-b border-[#1c2230]/80">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0d111a] border border-[#232938] shadow-inner">
+              <svg class="w-3.5 h-3.5 text-gray-400" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.16-.52 1.16-1.15V4.15c0-.64-.52-1.15-1.15-1.15zM9 11H7V8L5.5 9.5 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"></path>
+              </svg>
+              <span class="text-xs font-mono-code font-bold text-[var(--color-primary)] tracking-wide">README.md</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]"></span>
+              <span class="text-[10px] font-mono-code text-gray-400 ml-1">branch: main</span>
+            </div>
+
+            <!-- Terminal Hash status -->
+            <div class="font-mono-code text-[11px] text-gray-500 flex items-center gap-2">
+              <span class="hidden sm:inline text-gray-600">CIPHER:</span>
+              <span id="status-hash" class="text-[var(--color-secondary)] tracking-wider">0x8F3D1A...</span>
+            </div>
+          </div>
+
+          <div class="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- LEFT COLUMN: Profile Info, Tech Badges, Metrics & Mini Heatmap -->
+            <div class="lg:col-span-7 flex flex-col justify-center space-y-5">
+              
+              <!-- Greeting & Name -->
+              <div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white flex items-center flex-wrap gap-2.5">
+                  <span class="decrypt-text" data-original="Olá, sou Guilherme Macário">Olá, sou Guilherme Macário</span>
+                  <span class="inline-block transform hover:rotate-12 transition-transform duration-300 cursor-pointer text-3xl select-none" title="Acenar!">👋</span>
+                </h2>
+                
+                <!-- Role / Subtitle -->
+                <p class="text-[var(--color-primary)] font-semibold font-mono-code text-sm sm:text-base mt-2 tracking-wide flex items-center gap-2">
+                  <span class="text-gray-500">//</span>
+                  <span class="decrypt-text" data-original="Eng. de Computação • Supply Chain, Data & Cloud Architect">Eng. de Computação • Supply Chain, Data & Cloud Architect</span>
+                </p>
+              </div>
+
+              <!-- Bio -->
+              <p class="text-gray-300 text-sm leading-relaxed">
+                <span class="decrypt-text" data-original="Graduando em Engenharia de Computação pela FIAP. Arquiteto de dados e desenvolvedor de ecossistemas de alta performance para Supply Chain & Logística (BASF, Eurofarma), Data Warehouse (SAP ERP, EWM, Synapse), Power BI avançado e automação Python.">
+                  Graduando em Engenharia de Computação pela FIAP. Arquiteto de dados e desenvolvedor de ecossistemas de alta performance para Supply Chain & Logística (BASF, Eurofarma), Data Warehouse (SAP ERP, EWM, Synapse), Power BI avançado e automação Python.
+                </span>
+              </p>
+
+              <!-- Tech Stack & Badges -->
+              <div>
+                <span class="text-[11px] uppercase tracking-wider font-mono-code text-gray-400 block mb-2 font-bold flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[var(--color-primary)]"></span>
+                  Tech Stack & Arsenais Corporativos
+                </span>
+                <div id="tech-badge-container" class="flex flex-wrap gap-2">
+                  <!-- Python AI & PySpark -->
+                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-amber-400 shadow-sm transition hover:border-amber-400 hover:scale-105 cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    <span>Python / PySpark</span>
+                  </div>
+
+                  <!-- SQL & SAP DW -->
+                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-blue-400 shadow-sm transition hover:border-blue-400 hover:scale-105 cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <span>SQL Server / SAP DW</span>
+                  </div>
+
+                  <!-- Power BI & DAX -->
+                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-yellow-400 shadow-sm transition hover:border-yellow-400 hover:scale-105 cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                    <span>Power BI & DAX</span>
+                  </div>
+
+                  <!-- Power Apps -->
+                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-purple-400 shadow-sm transition hover:border-purple-400 hover:scale-105 cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                    <span>Power Apps</span>
+                  </div>
+
+                  <!-- SAP EWM & Logistics -->
+                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-cyan-400 shadow-sm transition hover:border-cyan-400 hover:scale-105 cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                    <span>SAP EWM / MM / SD</span>
+                  </div>
+
+                  <!-- Embedded C++ & Java -->
+                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-orange-400 shadow-sm transition hover:border-orange-400 hover:scale-105 cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                    <span>C++ & Java (IoT / Robótica)</span>
+                  </div>
+
+                  <!-- Docker & Cloud -->
+                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-emerald-400 shadow-sm transition hover:border-emerald-400 hover:scale-105 cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span>Docker & Cloud (Azure/GCP)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Metric Counters -->
+              <div class="pt-1">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                  <!-- Metric 1: Power BIs -->
+                  <div class="stat-box p-3 rounded-xl bg-[#0e121b]/90 border border-[#232938] flex flex-col items-center sm:items-start transition hover:border-[var(--color-primary)]">
+                    <div class="flex items-center gap-1.5 text-yellow-400 mb-1">
+                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                        <path d="M2 11h4v7H2v-7zm6-5h4v12H8V6zm6-4h4v16h-4V2z"></path>
+                      </svg>
+                      <span class="text-[10px] uppercase font-mono-code text-gray-400 font-bold">Power BIs</span>
+                    </div>
+                    <span class="counter-number text-lg sm:text-xl font-bold font-mono-code text-white" data-target="155">0</span>
+                  </div>
+
+                  <!-- Metric 2: SQL Scripts DW -->
+                  <div class="stat-box p-3 rounded-xl bg-[#0e121b]/90 border border-[#232938] flex flex-col items-center sm:items-start transition hover:border-[var(--color-primary)]">
+                    <div class="flex items-center gap-1.5 text-[var(--color-primary)] mb-1">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+                      </svg>
+                      <span class="text-[10px] uppercase font-mono-code text-gray-400 font-bold">SQL DW Scripts</span>
+                    </div>
+                    <span class="counter-number text-lg sm:text-xl font-bold font-mono-code text-white" data-target="45">0</span>
+                  </div>
+
+                  <!-- Metric 3: FIAP Challenges -->
+                  <div class="stat-box p-3 rounded-xl bg-[#0e121b]/90 border border-[#232938] flex flex-col items-center sm:items-start transition hover:border-[var(--color-secondary)]">
+                    <div class="flex items-center gap-1.5 text-[var(--color-secondary)] mb-1">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                      </svg>
+                      <span class="text-[10px] uppercase font-mono-code text-gray-400 font-bold">Challenges FIAP</span>
+                    </div>
+                    <span class="counter-number text-lg sm:text-xl font-bold font-mono-code text-white" data-target="5">0</span>
+                  </div>
+
+                  <!-- Metric 4: Total Commits & Contribs -->
+                  <div class="stat-box p-3 rounded-xl bg-[#0e121b]/90 border border-[#232938] flex flex-col items-center sm:items-start transition hover:border-[var(--color-primary)]">
+                    <div class="flex items-center gap-1.5 text-purple-400 mb-1">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                      </svg>
+                      <span class="text-[10px] uppercase font-mono-code text-gray-400 font-bold">Commits / Contrib</span>
+                    </div>
+                    <span class="counter-number text-lg sm:text-xl font-bold font-mono-code text-white" data-target="1850">0</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Realtime Git Contribution Heatmap -->
+              <div class="bg-[#0e121b]/80 border border-[#232938] rounded-xl p-3 flex flex-col gap-2">
+                <div class="flex items-center justify-between text-[11px] font-mono-code text-gray-400">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-[var(--color-primary)]"></span>
+                    <span>Git Contribution Activity (Eng. Computação & Corporate Repos)</span>
+                  </span>
+                  <span class="text-[10px] text-gray-400">Menos <span class="inline-block w-2 h-2 bg-[#1c2230] rounded-sm mx-0.5"></span><span class="inline-block w-2 h-2 bg-[var(--color-primary)]/40 rounded-sm mx-0.5"></span><span class="inline-block w-2 h-2 bg-[var(--color-primary)] rounded-sm mx-0.5"></span> Mais</span>
+                </div>
+                <!-- Mini Grid Matrix -->
+                <div id="heatmap-grid" class="flex gap-1 overflow-x-auto py-1">
+                  <!-- Dynamically populated via JS -->
+                </div>
+              </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: THE ROBOTIC MASCOT (Faithfully inspired by the Studio Robot Image) -->
+            <div class="lg:col-span-5 flex flex-col items-center justify-center p-2 relative">
+              
+              <!-- Ambient Studio Light Behind Mascot -->
+              <div class="absolute w-64 h-64 rounded-full bg-[var(--color-primary)]/20 blur-3xl pointer-events-none transition-all duration-700"></div>
+              <div class="absolute w-44 h-44 -bottom-4 rounded-full bg-[var(--color-secondary)]/15 blur-2xl pointer-events-none transition-all duration-700"></div>
+
+              <!-- Mascot Interactive Box -->
+              <div id="mascot-interactive-area" class="mascot-floating relative w-full max-w-[340px] aspect-square flex flex-col items-center justify-center cursor-pointer group">
+                
+                <!-- Mascot Speech/Status Bubble -->
+                <div class="absolute -top-7 px-3 py-1 bg-[#101420]/90 backdrop-blur-md border border-[var(--color-primary)]/60 rounded-full text-[10px] font-mono-code text-gray-200 shadow-lg flex items-center gap-1.5 transition-all group-hover:scale-105 pointer-events-none z-30">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-ping"></span>
+                  <span id="mascot-dialogue">"Clique para mudar meu humor!"</span>
+                </div>
+
+                <!-- Mascot Main SVG Vector Model -->
+                <svg id="mascot-svg" class="w-full h-full drop-shadow-[0_15px_30px_rgba(0,0,0,0.85)] filter" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <!-- Visor Gloss Reflection Gradient -->
+                    <linearGradient id="visorGlassGrad" x1="140" y1="120" x2="260" y2="280" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#1a202c" stop-opacity="0.9" />
+                      <stop offset="45%" stop-color="#0a0d14" stop-opacity="0.98" />
+                      <stop offset="100%" stop-color="#050608" />
+                    </linearGradient>
+
+                    <!-- Metallic Helmet Texture -->
+                    <radialGradient id="helmetMetal" cx="200" cy="180" r="160" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#3a4252" />
+                      <stop offset="60%" stop-color="#1d222d" />
+                      <stop offset="100%" stop-color="#0e1117" />
+                    </radialGradient>
+
+                    <!-- Neon Light Ring Gradient -->
+                    <linearGradient id="neonEarcupGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="var(--color-primary)" />
+                      <stop offset="100%" stop-color="var(--color-secondary)" />
+                    </linearGradient>
+
+                    <!-- Specular Curved Highlight -->
+                    <linearGradient id="visorReflection" x1="150" y1="140" x2="230" y2="220" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25" />
+                      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.05" />
+                      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                    </linearGradient>
+
+                    <!-- Glow filter for Visor LEDs -->
+                    <filter id="neonGlowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="5" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+
+                  <!-- Background Cyber Studio Aura & Soundwaves -->
+                  <g opacity="0.4">
+                    <circle cx="200" cy="200" r="175" stroke="var(--color-primary)" stroke-width="1" stroke-dasharray="6 8" />
+                    <circle cx="200" cy="200" r="190" stroke="var(--color-secondary)" stroke-width="0.7" stroke-dasharray="3 6" opacity="0.6" />
+                  </g>
+
+                  <!-- Studio Mascot Torso / Hoodie & Cybernetic Hands -->
+                  <g id="mascot-body">
+                    <!-- Black Heavy Hoodie Torso -->
+                    <path d="M120 370 C120 280 155 260 200 260 C245 260 280 280 280 370 Z" fill="#0d1017" stroke="#1f2636" stroke-width="2" />
+                    <!-- Neckline fold -->
+                    <path d="M165 265 C185 285 215 285 235 265" stroke="#252d3f" stroke-width="4" stroke-linecap="round" fill="none" />
+                    
+                    <!-- Left Cyber Arm & Fingers -->
+                    <g id="left-cyber-arm">
+                      <path d="M130 300 L110 340 L125 385" stroke="#2a3245" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                      <rect x="110" y="345" width="12" height="7" rx="3" fill="#4a5568" stroke="#1a202c" stroke-width="1.5"/>
+                      <rect x="110" y="356" width="14" height="7" rx="3" fill="#718096" stroke="#1a202c" stroke-width="1.5"/>
+                      <rect x="112" y="367" width="13" height="7" rx="3" fill="#4a5568" stroke="#1a202c" stroke-width="1.5"/>
+                      <circle cx="110" cy="340" r="4" fill="var(--color-primary)" filter="url(#neonGlowFilter)"/>
+                    </g>
+
+                    <!-- Right Cyber Arm & Fingers -->
+                    <g id="right-cyber-arm">
+                      <path d="M270 300 L290 340 L275 385" stroke="#2a3245" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                      <rect x="278" y="345" width="12" height="7" rx="3" fill="#4a5568" stroke="#1a202c" stroke-width="1.5"/>
+                      <rect x="276" y="356" width="14" height="7" rx="3" fill="#718096" stroke="#1a202c" stroke-width="1.5"/>
+                      <rect x="275" y="367" width="13" height="7" rx="3" fill="#4a5568" stroke="#1a202c" stroke-width="1.5"/>
+                      <circle cx="290" cy="340" r="4" fill="var(--color-primary)" filter="url(#neonGlowFilter)"/>
+                    </g>
+                  </g>
+
+                  <!-- Studio Headphones Headband -->
+                  <path d="M125 170 C125 80 275 80 275 170" stroke="#161b26" stroke-width="20" stroke-linecap="round" fill="none" />
+                  <path d="M132 170 C132 95 268 95 268 170" stroke="#2a3449" stroke-width="6" stroke-linecap="round" fill="none" />
+
+                  <!-- Helmet Base & Metallic Texture -->
+                  <g id="helmet-head-group">
+                    <rect x="120" y="105" width="160" height="150" rx="65" fill="url(#helmetMetal)" stroke="#384357" stroke-width="4" />
+                    
+                    <!-- Industrial Rivets & Bolts -->
+                    <circle cx="150" cy="120" r="2.5" fill="#718096" />
+                    <circle cx="200" cy="112" r="2.5" fill="#718096" />
+                    <circle cx="250" cy="120" r="2.5" fill="#718096" />
+                    <circle cx="130" cy="180" r="2.5" fill="#718096" />
+                    <circle cx="270" cy="180" r="2.5" fill="#718096" />
+
+                    <!-- Glossy Curved Black Visor Screen -->
+                    <rect x="135" y="125" width="130" height="110" rx="46" fill="url(#visorGlassGrad)" stroke="#1a202c" stroke-width="3" />
+                    
+                    <!-- Specular Glare -->
+                    <path d="M148 140 C175 130 225 130 252 140 C220 148 180 148 148 140 Z" fill="url(#visorReflection)" />
+                    <ellipse cx="160" cy="150" rx="14" ry="7" fill="#ffffff" opacity="0.12" transform="rotate(-15 160 150)" />
+
+                    <!-- DYNAMIC LED VISOR FACE -->
+                    <g id="mascot-face-group" filter="url(#neonGlowFilter)" class="transition-transform duration-100 ease-out">
+                      
+                      <!-- Default Mood: MISCHIEVOUS >:] -->
+                      <g id="mood-mischievous">
+                        <polygon points="160,162 188,154 184,176 160,172" fill="var(--color-primary)" />
+                        <polygon points="240,162 212,154 216,176 240,172" fill="var(--color-primary)" />
+                        <polyline points="166,198 178,206 189,198 200,208 211,198 222,206 234,198" fill="none" stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                      </g>
+
+                      <!-- Mood 2: HAPPY ^^ -->
+                      <g id="mood-happy" class="hidden">
+                        <path d="M162 172 Q174 152 186 172" fill="none" stroke="var(--color-primary)" stroke-width="5.5" stroke-linecap="round"/>
+                        <path d="M214 172 Q226 152 238 172" fill="none" stroke="var(--color-primary)" stroke-width="5.5" stroke-linecap="round"/>
+                        <path d="M174 195 Q200 216 226 195 Z" fill="var(--color-primary)" stroke="var(--color-primary)" stroke-width="2"/>
+                      </g>
+
+                      <!-- Mood 3: SCANNING / TERMINAL RADAR -->
+                      <g id="mood-scan" class="hidden">
+                        <line x1="160" y1="166" x2="188" y2="166" stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round"/>
+                        <line x1="212" y1="166" x2="240" y2="166" stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round"/>
+                        <text x="200" y="206" fill="var(--color-primary)" font-family="monospace" font-size="14" font-weight="bold" text-anchor="middle" letter-spacing="3">&lt;SCAN&gt;</text>
+                      </g>
+
+                      <!-- Mood 4: WINKING ;] -->
+                      <g id="mood-wink" class="hidden">
+                        <line x1="160" y1="168" x2="188" y2="168" stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round"/>
+                        <polygon points="240,162 212,154 216,176 240,172" fill="var(--color-primary)" />
+                        <path d="M172 202 Q195 204 228 194" fill="none" stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round"/>
+                      </g>
+                    </g>
+                  </g>
+
+                  <!-- Heavy Over-Ear Headphones -->
+                  <g id="left-earcup">
+                    <rect x="94" y="145" width="34" height="65" rx="16" fill="#141822" stroke="#2c364c" stroke-width="3" />
+                    <circle cx="111" cy="177" r="15" fill="#0d1118" stroke="url(#neonEarcupGrad)" stroke-width="3.5" filter="url(#neonGlowFilter)" />
+                    <g transform="translate(103, 168)">
+                      <line x1="4" y1="14" x2="4" y2="6" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" class="eq-bar-1"/>
+                      <line x1="8" y1="14" x2="8" y2="2" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" class="eq-bar-2"/>
+                      <line x1="12" y1="14" x2="12" y2="8" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" class="eq-bar-3"/>
+                    </g>
+                  </g>
+
+                  <g id="right-earcup">
+                    <rect x="272" y="145" width="34" height="65" rx="16" fill="#141822" stroke="#2c364c" stroke-width="3" />
+                    <circle cx="289" cy="177" r="15" fill="#0d1118" stroke="url(#neonEarcupGrad)" stroke-width="3.5" filter="url(#neonGlowFilter)" />
+                    <g transform="translate(281, 168)">
+                      <line x1="4" y1="14" x2="4" y2="4" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" class="eq-bar-4"/>
+                      <line x1="8" y1="14" x2="8" y2="2" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" class="eq-bar-2"/>
+                      <line x1="12" y1="14" x2="12" y2="7" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" class="eq-bar-1"/>
+                    </g>
+                  </g>
+
+                </svg>
+
+                <!-- Mascot Click Hint Footnote -->
+                <span class="text-[10px] font-mono-code text-gray-500 mt-2 flex items-center gap-1">
+                  <svg class="w-3 h-3 text-[var(--color-primary)] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+                  </svg>
+                  <span>Mascote reage ao cursor & clique para trocar expressão</span>
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Card Footer Status Bar -->
+          <div class="relative z-20 mt-6 pt-3 border-t border-[#1c2230]/80 flex flex-wrap items-center justify-between text-xs font-mono-code text-gray-500 gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[var(--color-primary)]"></span>
+              <span class="text-gray-400">STATUS:</span>
+              <span class="text-[var(--color-primary)] font-bold">ONLINE // FIAP_ENGINEER</span>
+            </div>
+            <div class="text-[11px] text-gray-400">
+              <span class="text-[var(--color-secondary)]">git commit -m</span> "Engineering, data intelligence & cyber aesthetics."
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SECTION: FIAP CHALLENGES & MAJOR PROJECTS SHOWCASE -->
+    <section class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl p-5 sm:p-7 shadow-xl">
+      <div class="flex items-center justify-between border-b border-[#232938] pb-4 mb-6">
+        <div>
+          <h3 class="text-lg font-bold text-white font-cyber flex items-center gap-2">
+            <span class="text-[var(--color-primary)]">//</span> PROJETOS & CHALLENGES EM DESTAQUE
+          </h3>
+          <p class="text-xs text-gray-400 font-mono-code mt-0.5">Engenharia de Computação FIAP (2022 - 2026) & Projetos Corporativos</p>
+        </div>
+        <a href="https://github.com/Guimemee?tab=repositories" target="_blank" class="text-xs font-mono-code text-[var(--color-secondary)] hover:underline flex items-center gap-1">
+          <span>Ver todos os repositórios</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <!-- Project 1: Challenge 2026 -->
+        <a href="https://github.com/Guimemee/fiap-challenge-2026-smart-industry" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+              <span class="px-2 py-0.5 rounded bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30">2026 • 5º Ano</span>
+              <span>Smart Industry</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-[var(--color-primary)] transition">fiap-challenge-2026-smart-industry</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Sistemas Cyber-Físicos, Visão Computacional, IA Industrial & Automação Fabril Avançada.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+            <span>Python • C++ • IoT</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Project 2: Challenge 2025 -->
+        <a href="https://github.com/Guimemee/fiap-challenge-2025-spi-metaindustria" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+              <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">2025 • 4º Ano</span>
+              <span>SPI Meta-indústria</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition">fiap-challenge-2025-spi-metaindustria</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Gêmeos Digitais, Integração Robótica, CAD 3D e Modelos Preditivos de Chão de Fábrica.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+            <span>CAD • Digital Twin • PyTorch</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Project 3: Challenge 2024 Sanofi -->
+        <a href="https://github.com/Guimemee/fiap-challenge-2024-sanofi" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+              <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/30">2024 • 3º Ano</span>
+              <span>Sanofi Pharma</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-purple-400 transition">fiap-challenge-2024-sanofi</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Inovação em Saúde Digital, Cadeia de Suprimentos Farmacêutica e Telemetria de Pacientes.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+            <span>Data Analytics • Mobile • IoT</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Project 4: Challenge 2023 Natura -->
+        <a href="https://github.com/Guimemee/fiap-challenge-2023-natura" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">2023 • 2º Ano</span>
+              <span>Natura</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition">fiap-challenge-2023-natura</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Logística Reversa Sustentável, Economia Circular e Rastreamento de Resíduos.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+            <span>Sustentabilidade • Cloud • SQL</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Project 5: Challenge 2022 HAOC -->
+        <a href="https://github.com/Guimemee/fiap-challenge-2022-haoc" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+              <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">2022 • 1º Ano</span>
+              <span>Hosp. Oswaldo Cruz</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-cyan-400 transition">fiap-challenge-2022-haoc</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Otimização de Fluxo Hospitalar, Triagem Ágil e Engenharia de Software.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+            <span>Java • MySQL • UI/UX</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Project 6: Master Engineering Portfolio -->
+        <a href="https://github.com/Guimemee/fiap-computer-engineering-portfolio" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-yellow-400 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+              <span class="px-2 py-0.5 rounded bg-yellow-400/10 text-yellow-400 border border-yellow-400/30">Master Repositório</span>
+              <span>5 Anos FIAP</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-yellow-400 transition">fiap-computer-engineering-portfolio</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Portfólio integral unificado: 9 matérias, 5 desafios e arquitetura de engenharia.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+            <span>Portfolio • Docs • Showcase</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE CYBER TERMINAL CLI -->
+    <section class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl p-5 sm:p-6 shadow-xl font-mono-code">
+      <div class="flex items-center justify-between border-b border-[#232938] pb-3 mb-4 text-xs text-gray-400">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+          <span class="ml-2 text-gray-300">terminal@guilherme-macario:~ (interactive bash)</span>
+        </div>
+        <span class="text-[11px] text-gray-500">Digite <b class="text-[var(--color-secondary)]">help</b> para comandos</span>
+      </div>
+
+      <div id="terminal-output" class="text-xs space-y-1.5 max-h-48 overflow-y-auto mb-3 text-gray-300">
+        <p class="text-[var(--color-secondary)]">Cyber Shell Terminal Initialized [v3.4.2]</p>
+        <p class="text-gray-400">Pronto para execução. Digite um comando como <b class="text-white">about</b>, <b class="text-white">skills</b>, <b class="text-white">projects</b> ou <b class="text-white">contact</b>.</p>
+      </div>
+
+      <div class="flex items-center gap-2 text-xs">
+        <span class="text-[var(--color-primary)] font-bold">guilherme@core:~$</span>
+        <input type="text" id="terminal-input" placeholder="digite aqui..." class="flex-1 bg-transparent border-none text-white focus:outline-none">
+      </div>
+    </section>
+
+    <!-- Bottom Footer -->
+    <footer class="w-full text-center text-xs text-gray-500 font-mono-code py-4 flex flex-col sm:flex-row items-center justify-between gap-3 px-2">
+      <div class="flex items-center gap-3">
+        <span>&copy; 2026 Guilherme Macário</span>
+        <span>•</span>
+        <a href="https://github.com/Guimemee" target="_blank" class="hover:text-[var(--color-primary)] transition">GitHub @Guimemee</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-gray-400">Hosted via GitHub Pages</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Edit Profile Drawer / Modal -->
+  <div id="edit-drawer" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-[#0e121b] border border-[var(--color-primary)]/40 w-full max-w-lg rounded-2xl p-6 shadow-2xl space-y-4 transform scale-95 transition-transform duration-300" id="drawer-panel">
+      <div class="flex items-center justify-between border-b border-[#232938] pb-3">
+        <h3 class="text-sm font-bold text-white flex items-center gap-2 font-cyber">
+          <svg class="w-4 h-4 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+          </svg>
+          Customizar Dados do Perfil
+        </h3>
+        <button id="btn-close-drawer" class="text-gray-400 hover:text-white p-1 rounded-lg">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs font-mono-code">
+        <div>
+          <label class="block text-gray-400 mb-1">Seu Nome / Título:</label>
+          <input type="text" id="input-name" value="Olá, sou Guilherme Macário" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
+        </div>
+        <div>
+          <label class="block text-gray-400 mb-1">Cargo / Especialidade:</label>
+          <input type="text" id="input-role" value="Eng. de Computação • Supply Chain, Data & Cloud Architect" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
+        </div>
+        <div>
+          <label class="block text-gray-400 mb-1">Bio / Resumo:</label>
+          <textarea id="input-bio" rows="2" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">Graduando em Engenharia de Computação pela FIAP. Arquiteto de dados e desenvolvedor de ecossistemas de alta performance para Supply Chain & Logística (BASF, Eurofarma), Data Warehouse (SAP ERP, EWM, Synapse), Power BI avançado e automação Python.</textarea>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-gray-400 mb-1">Power BIs:</label>
+            <input type="number" id="input-stars" value="155" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
+          </div>
+          <div>
+            <label class="block text-gray-400 mb-1">SQL Scripts DW:</label>
+            <input type="number" id="input-repos" value="45" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
+          </div>
+          <div>
+            <label class="block text-gray-400 mb-1">Challenges FIAP:</label>
+            <input type="number" id="input-contribs" value="5" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
+          </div>
+          <div>
+            <label class="block text-gray-400 mb-1">Commits / Contrib:</label>
+            <input type="number" id="input-followers" value="1850" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-2 pt-2 border-t border-[#232938]">
+        <button id="btn-save-drawer" class="bg-[var(--color-primary)] hover:brightness-110 text-white font-medium px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 transition font-mono-code font-bold">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          Salvar & Decodificar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* Synthetic Web Audio API Sound Generator */
+    class CyberAudioEngine {
+      constructor() {
+        this.ctx = null;
+        this.enabled = true;
+      }
+
+      init() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (AudioContext) {
+            this.ctx = new AudioContext();
+          }
+        }
+      }
+
+      playBlip(freq = 1200) {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx || this.ctx.state === 'suspended') {
+          this.ctx?.resume();
+        }
+        try {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(320, this.ctx.currentTime + 0.04);
+          
+          gain.gain.setValueAtTime(0.03, this.ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.04);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+
+          osc.start();
+          osc.stop(this.ctx.currentTime + 0.04);
+        } catch (e) {}
+      }
+
+      playSweep() {
+        if (!this.enabled) return;
+        this.init();
+        try {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(220, this.ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(950, this.ctx.currentTime + 0.35);
+          
+          gain.gain.setValueAtTime(0.05, this.ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.35);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+
+          osc.start();
+          osc.stop(this.ctx.currentTime + 0.35);
+        } catch (e) {}
+      }
+
+      playMascotChirp() {
+        if (!this.enabled) return;
+        this.init();
+        try {
+          const now = this.ctx.currentTime;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(650, now);
+          osc.frequency.setValueAtTime(1100, now + 0.06);
+          osc.frequency.setValueAtTime(1450, now + 0.12);
+
+          gain.gain.setValueAtTime(0.06, now);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.22);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+
+          osc.start();
+          osc.stop(now + 0.22);
+        } catch (e) {}
+      }
+    }
+
+    const sound = new CyberAudioEngine();
+
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+    let matrixAnimationId = null;
+    let drops = [];
+    const matrixChars = '01アイウエオカキクケコサシスセソタチツテトナニヌネハヒフヘホマミムメモヤユヨラリルレワ10';
+
+    function initMatrixCanvas() {
+      const parent = canvas.parentElement;
+      canvas.width = parent.offsetWidth;
+      canvas.height = parent.offsetHeight;
+      const fontSize = 14;
+      const columns = Math.floor(canvas.width / fontSize);
+      drops = [];
+      for (let i = 0; i < columns; i++) {
+        drops[i] = Math.floor(Math.random() * -50);
+      }
+    }
+
+    let matrixActive = false;
+    function drawMatrixRain() {
+      if (!matrixActive) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+      }
+      ctx.fillStyle = 'rgba(7, 9, 14, 0.18)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const computedStyle = getComputedStyle(document.body);
+      const primaryColor = computedStyle.getPropertyValue('--color-primary').trim() || '#ff1e42';
+      const secondaryColor = computedStyle.getPropertyValue('--color-secondary').trim() || '#00d2ff';
+
+      ctx.font = '12px "Fira Code", monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+        const x = i * 14;
+        const y = drops[i] * 14;
+
+        if (Math.random() > 0.88) {
+          ctx.fillStyle = '#ffffff';
+        } else if (Math.random() > 0.6) {
+          ctx.fillStyle = secondaryColor;
+        } else {
+          ctx.fillStyle = primaryColor;
+        }
+
+        ctx.fillText(text, x, y);
+
+        if (y > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+
+      matrixAnimationId = requestAnimationFrame(drawMatrixRain);
+    }
+
+    class TextScrambler {
+      constructor(el, onStep) {
+        this.el = el;
+        this.chars = '!<>-_\\/[]{}—=+*^?#________010101XYZアイウエオ';
+        this.targetText = el.getAttribute('data-original') || el.innerText.trim();
+        this.onStep = onStep;
+        this.frame = 0;
+        this.queue = [];
+        this.animId = null;
+      }
+
+      start(speedMultiplier = 1) {
+        const length = this.targetText.length;
+        this.queue = [];
+        for (let i = 0; i < length; i++) {
+          const from = this.chars[Math.floor(Math.random() * this.chars.length)];
+          const to = this.targetText[i] || '';
+          const start = Math.floor(Math.random() * 20 / speedMultiplier);
+          const end = start + Math.floor(25 / speedMultiplier) + (i * 2);
+          this.queue.push({ from, to, start, end, char: from });
+        }
+        cancelAnimationFrame(this.animId);
+        this.frame = 0;
+        this.update();
+      }
+
+      update() {
+        let output = '';
+        let complete = 0;
+
+        for (let i = 0, n = this.queue.length; i < n; i++) {
+          let { from, to, start, end, char } = this.queue[i];
+
+          if (this.frame >= end) {
+            complete++;
+            output += to;
+          } else if (this.frame >= start) {
+            if (!char || Math.random() < 0.28) {
+              char = this.chars[Math.floor(Math.random() * this.chars.length)];
+              this.queue[i].char = char;
+            }
+            output += `<span class="text-[var(--color-primary)] font-mono-code font-bold">${char}</span>`;
+          } else {
+            output += `<span class="opacity-30 text-[var(--color-secondary)] font-mono-code">${from}</span>`;
+          }
+        }
+
+        this.el.innerHTML = output;
+
+        if (this.onStep && Math.random() > 0.65) {
+          this.onStep();
+        }
+
+        if (complete < this.queue.length) {
+          this.frame++;
+          this.animId = requestAnimationFrame(() => this.update());
+        } else {
+          this.el.innerText = this.targetText;
+        }
+      }
+    }
+
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const easeOutQuad = 1 - (1 - progress) * (1 - progress);
+        const current = Math.floor(easeOutQuad * (end - start) + start);
+        obj.innerText = current.toLocaleString();
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          obj.innerText = end.toLocaleString();
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    function buildHeatmap() {
+      const container = document.getElementById('heatmap-grid');
+      if (!container) return;
+      container.innerHTML = '';
+      const weeks = 22;
+      const days = 7;
+
+      for (let w = 0; w < weeks; w++) {
+        const col = document.createElement('div');
+        col.className = 'flex flex-col gap-1';
+        for (let d = 0; d < days; d++) {
+          const cell = document.createElement('div');
+          const level = Math.floor(Math.random() * 5);
+          cell.className = 'w-2.5 h-2.5 rounded-sm transition-transform duration-200 hover:scale-125 cursor-pointer';
+          
+          if (level === 0) {
+            cell.style.backgroundColor = '#161d2b';
+          } else if (level === 1) {
+            cell.style.backgroundColor = 'rgba(var(--color-primary-rgb), 0.25)';
+          } else if (level === 2) {
+            cell.style.backgroundColor = 'rgba(var(--color-primary-rgb), 0.5)';
+          } else if (level === 3) {
+            cell.style.backgroundColor = 'rgba(var(--color-primary-rgb), 0.75)';
+          } else {
+            cell.style.backgroundColor = 'var(--color-primary)';
+            cell.style.boxShadow = '0 0 6px var(--color-primary-glow)';
+          }
+          
+          cell.title = `Semana ${w + 1}, Dia ${d + 1}: ${level * 4 + Math.floor(Math.random() * 5)} commits`;
+          col.appendChild(cell);
+        }
+        container.appendChild(col);
+      }
+    }
+
+    let currentMoodIndex = 0;
+    const moodList = [
+      { id: 'mood-mischievous', label: 'MISCHIEVOUS', dialogue: '">:] Overclock total em Supply Chain & DW!"' },
+      { id: 'mood-happy', label: 'HAPPY ^^', dialogue: '"^^ Modelo DAX e SAP EWM conciliados 100%!"' },
+      { id: 'mood-scan', label: 'MATRIX SCAN', dialogue: '"[SCAN] Varrendo pipelines e tabelas de carga..."' },
+      { id: 'mood-wink', label: 'CYBER WINK', dialogue: '";] Engenharia pura: hardware + cloud + dados."' }
+    ];
+
+    function setupMascotInteractions() {
+      const mascotArea = document.getElementById('mascot-interactive-area');
+      const faceGroup = document.getElementById('mascot-face-group');
+      const dialogueEl = document.getElementById('mascot-dialogue');
+      const moodLabel = document.getElementById('mascot-mood-label');
+      const heroCard = document.getElementById('hero-card');
+
+      mascotArea.addEventListener('click', () => {
+        sound.playMascotChirp();
+        currentMoodIndex = (currentMoodIndex + 1) % moodList.length;
+        const currentMood = moodList[currentMoodIndex];
+
+        moodList.forEach(m => {
+          document.getElementById(m.id)?.classList.add('hidden');
+        });
+
+        document.getElementById(currentMood.id)?.classList.remove('hidden');
+
+        dialogueEl.innerText = currentMood.dialogue;
+        moodLabel.innerText = currentMood.label;
+      });
+
+      heroCard.addEventListener('mousemove', (e) => {
+        const rect = heroCard.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        const normalX = (mouseX / rect.width - 0.5) * 2;
+        const normalY = (mouseY / rect.height - 0.5) * 2;
+
+        const moveX = normalX * 12;
+        const moveY = normalY * 8;
+
+        if (faceGroup) {
+          faceGroup.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        }
+      });
+
+      heroCard.addEventListener('mouseleave', () => {
+        if (faceGroup) {
+          faceGroup.style.transform = 'translate(0px, 0px)';
+        }
+      });
+    }
+
+    let isDecoding = false;
+
+    function runFullDecryption() {
+      if (isDecoding) return;
+      isDecoding = true;
+
+      sound.playSweep();
+
+      const counters = document.querySelectorAll('.counter-number');
+      counters.forEach(c => c.innerText = '0');
+
+      initMatrixCanvas();
+      matrixActive = true;
+      cancelAnimationFrame(matrixAnimationId);
+      drawMatrixRain();
+
+      const card = document.getElementById('hero-card');
+      const scanBeam = document.getElementById('scan-beam');
+      const cardWidth = card.offsetWidth;
+
+      scanBeam.style.opacity = '1';
+      scanBeam.style.transform = 'translateX(-15px)';
+      scanBeam.style.transition = 'none';
+
+      const scanDuration = 1400;
+
+      setTimeout(() => {
+        scanBeam.style.transition = `transform ${scanDuration}ms cubic-bezier(0.25, 1, 0.5, 1)`;
+        scanBeam.style.transform = `translateX(${cardWidth + 25}px)`;
+      }, 50);
+
+      const decryptElements = document.querySelectorAll('.decrypt-text');
+      decryptElements.forEach((el, index) => {
+        setTimeout(() => {
+          const scrambler = new TextScrambler(el, () => {
+            if (Math.random() > 0.72) sound.playBlip(950 + Math.random() * 550);
+          });
+          scrambler.start(1.0);
+        }, index * 120);
+      });
+
+      const badges = document.querySelectorAll('.tech-badge');
+      badges.forEach((b, i) => {
+        b.style.opacity = '0';
+        b.style.transform = 'translateY(8px) scale(0.95)';
+        b.style.transition = 'all 0.4s ease';
+
+        setTimeout(() => {
+          b.style.opacity = '1';
+          b.style.transform = 'translateY(0) scale(1)';
+        }, 350 + i * 80);
+      });
+
+      setTimeout(() => {
+        counters.forEach(c => {
+          const target = parseInt(c.getAttribute('data-target'), 10) || 0;
+          animateValue(c, 0, target, 1200);
+        });
+      }, 500);
+
+      buildHeatmap();
+
+      const hashEl = document.getElementById('status-hash');
+      const randomHex = () => '0x' + Math.floor(Math.random()*16777215).toString(16).toUpperCase().padStart(6, '0');
+      let hashCount = 0;
+      const hashTimer = setInterval(() => {
+        hashEl.innerText = randomHex() + '...';
+        hashCount++;
+        if (hashCount > 10) clearInterval(hashTimer);
+      }, 60);
+
+      setTimeout(() => {
+        matrixActive = false;
+        scanBeam.style.opacity = '0';
+        isDecoding = false;
+      }, scanDuration + 200);
+    }
+
+    // Interactive Terminal Logic
+    function setupTerminal() {
+      const termInput = document.getElementById('terminal-input');
+      const termOutput = document.getElementById('terminal-output');
+      if (!termInput || !termOutput) return;
+
+      termInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const val = termInput.value.trim().toLowerCase();
+          termInput.value = '';
+
+          const pUser = document.createElement('p');
+          pUser.innerHTML = `<span class="text-[var(--color-primary)] font-bold">guilherme@core:~$</span> ${val}`;
+          termOutput.appendChild(pUser);
+
+          const pResp = document.createElement('p');
+          if (val === 'help') {
+            pResp.innerHTML = `<span class="text-[var(--color-secondary)]">Comandos disponíveis:</span><br>&bull; <b class="text-white">about</b>: Resumo profissional e formação FIAP<br>&bull; <b class="text-white">skills</b>: Lista do stack tecnológico<br>&bull; <b class="text-white">projects</b>: Links rápidos dos Challenges FIAP & DW<br>&bull; <b class="text-white">contact</b>: Links de conexão e GitHub<br>&bull; <b class="text-white">clear</b>: Limpa a tela do terminal`;
+          } else if (val === 'about') {
+            pResp.innerHTML = `Guilherme Macário &bull; Engenharia de Computação (FIAP 2022-2026). Atuação destacada em Data Warehousing, SAP ERP (EWM/MM/SD), automação analítica de Supply Chain farmacêutico e de cosméticos (BASF, Eurofarma), Power BI com DAX avançado e soluções Power Platform.`;
+          } else if (val === 'skills') {
+            pResp.innerHTML = `[STACK]: Python, PySpark, T-SQL, SAP ERP/EWM, Power BI, DAX, Power Apps, C++, Java, Azure Synapse, GCP BigQuery, Docker, Git.`;
+          } else if (val === 'projects') {
+            pResp.innerHTML = `5 Challenges FIAP entregues:<br>1. Smart Industry 2026 (IA & Visão)<br>2. SPI Meta-indústria 2025 (Digital Twin)<br>3. Sanofi 2024 (Saúde & Cadeia Farmacêutica)<br>4. Natura 2023 (Logística Reversa)<br>5. HAOC 2022 (Gestão Hospitalar)`;
+          } else if (val === 'contact') {
+            pResp.innerHTML = `GitHub: <a href="https://github.com/Guimemee" target="_blank" class="text-[var(--color-secondary)] underline">github.com/Guimemee</a><br>Email: guilhermemegatherion@hotmail.com`;
+          } else if (val === 'clear') {
+            termOutput.innerHTML = '';
+            return;
+          } else if (val === '') {
+            return;
+          } else {
+            pResp.innerHTML = `<span class="text-red-400">Comando '${val}' não reconhecido. Digite 'help' para ajuda.</span>`;
+          }
+          termOutput.appendChild(pResp);
+          termOutput.scrollTop = termOutput.scrollHeight;
+          sound.playBlip(1100);
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener('resize', initMatrixCanvas);
+      initMatrixCanvas();
+      buildHeatmap();
+      setupMascotInteractions();
+      setupTerminal();
+
+      setTimeout(runFullDecryption, 300);
+
+      const btnReplay = document.getElementById('btn-replay');
+      btnReplay.addEventListener('click', () => {
+        sound.init();
+        runFullDecryption();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+          sound.init();
+          runFullDecryption();
+        }
+      });
+
+      const themeCrimson = document.getElementById('theme-btn-crimson');
+      const themeMatrix = document.getElementById('theme-btn-matrix');
+      const themeCyberpunk = document.getElementById('theme-btn-cyberpunk');
+      const themeButtons = [themeCrimson, themeMatrix, themeCyberpunk];
+
+      function applyTheme(themeClass, activeBtn) {
+        document.body.className = '';
+        if (themeClass) document.body.classList.add(themeClass);
+
+        themeButtons.forEach(b => {
+          b.className = 'theme-btn px-2.5 py-1 rounded-lg text-xs font-mono-code transition text-gray-400 hover:text-white';
+        });
+        activeBtn.className = 'theme-btn px-2.5 py-1 rounded-lg text-xs font-mono-code transition bg-[var(--color-primary)]/20 text-[var(--color-primary)] font-bold border border-[var(--color-primary)]/40';
+
+        buildHeatmap();
+        sound.playMascotChirp();
+      }
+
+      themeCrimson.addEventListener('click', () => applyTheme('', themeCrimson));
+      themeMatrix.addEventListener('click', () => applyTheme('theme-matrix', themeMatrix));
+      themeCyberpunk.addEventListener('click', () => applyTheme('theme-cyberpunk', themeCyberpunk));
+
+      const soundBtn = document.getElementById('btn-sound-toggle');
+      const iconOn = document.getElementById('sound-icon-on');
+      const iconOff = document.getElementById('sound-icon-off');
+      const soundText = document.getElementById('sound-text');
+
+      soundBtn.addEventListener('click', () => {
+        sound.init();
+        sound.enabled = !sound.enabled;
+        if (sound.enabled) {
+          iconOn.classList.remove('hidden');
+          iconOff.classList.add('hidden');
+          soundText.innerText = 'SFX Audio';
+        } else {
+          iconOn.classList.add('hidden');
+          iconOff.classList.remove('hidden');
+          soundText.innerText = 'Mudo';
+        }
+      });
+
+      // Customization Drawer Logic
+      const editBtn = document.getElementById('btn-edit-profile');
+      const drawer = document.getElementById('edit-drawer');
+      const drawerPanel = document.getElementById('drawer-panel');
+      const closeBtn = document.getElementById('btn-close-drawer');
+      const saveBtn = document.getElementById('btn-save-drawer');
+
+      function openDrawer() {
+        drawer.classList.remove('opacity-0', 'pointer-events-none');
+        drawerPanel.classList.remove('scale-95');
+        drawerPanel.classList.add('scale-100');
+      }
+
+      function closeDrawer() {
+        drawer.classList.add('opacity-0', 'pointer-events-none');
+        drawerPanel.classList.remove('scale-100');
+        drawerPanel.classList.add('scale-95');
+      }
+
+      editBtn.addEventListener('click', openDrawer);
+      closeBtn.addEventListener('click', closeDrawer);
+      drawer.addEventListener('click', (e) => {
+        if (e.target === drawer) closeDrawer();
+      });
+
+      saveBtn.addEventListener('click', () => {
+        const nameVal = document.getElementById('input-name').value.trim();
+        const roleVal = document.getElementById('input-role').value.trim();
+        const bioVal = document.getElementById('input-bio').value.trim();
+        const pbiVal = document.getElementById('input-stars').value;
+        const sqlVal = document.getElementById('input-repos').value;
+        const chgVal = document.getElementById('input-contribs').value;
+        const cmtVal = document.getElementById('input-followers').value;
+
+        const nameEl = document.querySelectorAll('.decrypt-text')[0];
+        const roleEl = document.querySelectorAll('.decrypt-text')[1];
+        const bioEl = document.querySelectorAll('.decrypt-text')[2];
+
+        if (nameVal) nameEl.setAttribute('data-original', nameVal);
+        if (roleVal) roleEl.setAttribute('data-original', roleVal);
+        if (bioVal) bioEl.setAttribute('data-original', bioVal);
+
+        const counterEls = document.querySelectorAll('.counter-number');
+        if (counterEls[0]) counterEls[0].setAttribute('data-target', pbiVal || 0);
+        if (counterEls[1]) counterEls[1].setAttribute('data-target', sqlVal || 0);
+        if (counterEls[2]) counterEls[2].setAttribute('data-target', chgVal || 0);
+        if (counterEls[3]) counterEls[3].setAttribute('data-target', cmtVal || 0);
+
+        closeDrawer();
+        setTimeout(runFullDecryption, 200);
+      });
+    });
+  </script>
+</body>
+</html>

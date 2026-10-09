@@ -1,16 +1,16 @@
 <div align="center">
 
   <!-- Status de Alerta de Segurança no Topo -->
-  <a href="https://SEU-USUARIO.github.io" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/SECURITY_ALERT-GITHUB_RESTRICTED_SANDBOX-ff1e42?style=for-the-badge&logo=github&logoColor=white" alt="Security Alert" />
-    <img src="https://img.shields.io/badge/INTERACTIVE_CORE-OFFLINE-orange?style=for-the-badge" alt="Core Offline" />
+  <a href="https://guimemee.github.io/cyber-profile/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/FIAP_COMPUTER_ENGINEERING-ACTIVE_CORE-ff1e42?style=for-the-badge&logo=fiap&logoColor=white" alt="FIAP Engineering Core" />
+    <img src="https://img.shields.io/badge/CYBER_PORTFOLIO-LIVE_ON_GITPAGES-00d2ff?style=for-the-badge&logo=github&logoColor=black" alt="Live on GitPages" />
   </a>
 
   <br/><br/>
 
   <!-- Cartão do Mascote Clicável (Abre o GitHub Pages) -->
-  <a href="https://SEU-USUARIO.github.io" target="_blank" rel="noopener noreferrer" title="⚠️ CLIQUE PARA LIBERAR ACESSO AO SISTEMA COMPLETO!">
-    <img src="./hero-profile.svg" alt="Cyber Profile Hero" width="100%" />
+  <a href="https://guimemee.github.io/cyber-profile/" target="_blank" rel="noopener noreferrer" title="⚠️ CLIQUE PARA ABRIR O CYBER PORTFOLIO INTERATIVO NO GITHUB PAGES!">
+    <img src="./hero-profile.svg" alt="Cyber Profile Hero - Guilherme Macário" width="100%" />
   </a>
 
   <br/><br/>
@@ -18,38 +18,43 @@
   <!-- Terminal de Aviso que Instiga o Clique -->
   <table>
     <tr>
-      <td align="center" style="background:#0b0e14; border:1px solid #ff1e42; padding: 16px;">
-        <p>⚠️ <b>MODO DE VISUALIZAÇÃO ESTÁTICA DETETADO</b></p>
-        <p><i>O motor do GitHub bloqueou o rastreamento ocular do mascote, o áudio de estúdio e a decodificação Matrix neste documento.</i></p>
-        <a href="https://SEU-USUARIO.github.io" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.shields.io/badge/EXECUTAR_OVERRIDE-DESBLOQUEAR_SISTEMA_COMPLETO_▶-00f3ff?style=for-the-badge&logo=powershell&logoColor=black" alt="Bypass" />
+      <td align="center" style="background:#0b0e14; border:1px solid #ff1e42; padding: 18px; border-radius: 12px;">
+        <p>⚠️ <b>MODO INTERATIVO DISPONÍVEL NO GITHUB PAGES</b></p>
+        <p><i>O motor Markdown do GitHub desativa animações ricas, rastreamento ocular do mascote, áudio de sintetizador e decodificação Matrix neste arquivo estático.</i></p>
+        <br/>
+        <a href="https://guimemee.github.io/cyber-profile/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/DESBLOQUEAR_SISTEMA_COMPLETO-ACESSAR_GITPAGE_INTERATIVO_▶-00f3ff?style=for-the-badge&logo=powershell&logoColor=black" alt="Acessar GitPage" />
         </a>
       </td>
     </tr>
   </table>
 
-  <sub>👆 <i>Clique na caixa ou no mascote para inicializar os movimentos dos olhos, som e reações em tempo real.</i></sub>
+  <sub>👆 <i>Clique no cartão ou no botão acima para interagir com o mascote, escutar os efeitos sonoros de sintetizador e alternar temas (Crimson, Matrix, Cyberpunk).</i></sub>
 
   <br/><br/>
 
   <!-- Seção de Habilidades e Tecnologias -->
-  <h3>⚡ Tech Stack & Ferramentas</h3>
+  <h3>⚡ Tech Stack & Especialidades Corporativas</h3>
 
   <p>
-    <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-    <img src="https://img.shields.io/badge/SQL-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQL" />
-    <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white" alt="Databricks" />
-    <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
-    <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
-    <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+    <img src="https://img.shields.io/badge/Microsoft_Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI" />
+    <img src="https://img.shields.io/badge/Microsoft_Power_Apps-742774?style=for-the-badge&logo=powerapps&logoColor=white" alt="Power Apps" />
+    <img src="https://img.shields.io/badge/SAP_ERP_EWM-0FAAFF?style=for-the-badge&logo=sap&logoColor=white" alt="SAP" />
+    <img src="https://img.shields.io/badge/SQL_Server_T--SQL-CC292B?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="SQL Server" />
+    <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+    <img src="https://img.shields.io/badge/C%2B%2B_IoT-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
   </p>
 
   <br/>
 
   <!-- Painel de Conexões -->
   <p>
-    <a href="https://SEU-USUARIO.github.io" target="_blank">
-      <img src="https://img.shields.io/badge/PORTFOLIO_LIVE-🌐_ACESSAR_TERMINAL-ff1e42?style=for-the-badge" alt="Portfolio Live" />
+    <a href="https://guimemee.github.io/cyber-profile/" target="_blank">
+      <img src="https://img.shields.io/badge/CYBER_PORTFOLIO_LIVE-🌐_ACESSAR_TERMINAL_ONLINE-ff1e42?style=for-the-badge" alt="Portfolio Live" />
+    </a>
+    <a href="https://github.com/Guimemee/fiap-computer-engineering-portfolio" target="_blank">
+      <img src="https://img.shields.io/badge/ACERVO_ENGENHARIA_FIAP-🎓_PORTFOLIO_MASTER-yellow?style=for-the-badge" alt="Acervo FIAP" />
     </a>
   </p>
 
