@@ -1,13 +1,11 @@
 <svg width="850" height="380" viewBox="0 0 850 380" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background Gradients -->
     <linearGradient id="bgGrad" x1="0" y1="0" x2="850" y2="380" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#07090e" />
       <stop offset="50%" stop-color="#0c0f17" />
       <stop offset="100%" stop-color="#080b12" />
     </linearGradient>
 
-    <!-- Neon Glows -->
     <radialGradient id="crimsonGlow" cx="20%" cy="30%" r="50%">
       <stop offset="0%" stop-color="#ff1e42" stop-opacity="0.25" />
       <stop offset="100%" stop-color="#ff1e42" stop-opacity="0" />
@@ -18,7 +16,6 @@
       <stop offset="100%" stop-color="#00d2ff" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Visor Gradient -->
     <linearGradient id="visorGrad" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#1a202c" stop-opacity="0.9" />
       <stop offset="100%" stop-color="#050608" />
@@ -33,10 +30,10 @@
     </filter>
 
     <style>
-      .cyber-title { font-family: 'Orbitron', 'Segoe UI', sans-serif; font-weight: 800; font-size: 26px; fill: #ffffff; letter-spacing: 1px; }
-      .cyber-sub { font-family: 'Fira Code', 'Courier New', monospace; font-size: 13px; fill: #ff1e42; font-weight: 600; letter-spacing: 0.5px; }
-      .cyber-desc { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 12px; fill: #94a3b8; }
-      .cyber-badge { font-family: 'Fira Code', monospace; font-size: 11px; fill: #cbd5e1; font-weight: 600; }
+      .cyber-title { font-family: 'Orbitron', 'Segoe UI', sans-serif; font-weight: 800; font-size: 25px; fill: #ffffff; letter-spacing: 0.5px; }
+      .cyber-sub { font-family: 'Fira Code', 'Courier New', monospace; font-size: 11.5px; fill: #ff1e42; font-weight: 600; letter-spacing: 0.2px; }
+      .cyber-desc { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 11.5px; fill: #94a3b8; }
+      .cyber-badge { font-family: 'Fira Code', monospace; font-size: 10.5px; fill: #cbd5e1; font-weight: 600; }
       .cyber-metric-val { font-family: 'Fira Code', monospace; font-weight: 700; font-size: 18px; fill: #ffffff; }
       .cyber-metric-lbl { font-family: 'Fira Code', monospace; font-size: 9px; fill: #64748b; font-weight: 600; text-transform: uppercase; }
     </style>
@@ -70,9 +67,9 @@
     <circle cx="24" cy="8" r="5" fill="#ffbd2e" />
     <circle cx="40" cy="8" r="5" fill="#27c93f" />
     <text x="65" y="12" font-family="'Fira Code', monospace" font-size="11" fill="#64748b">github.com/Guimemee // README.md (active)</text>
-    <rect x="680" y="0" width="100" height="18" rx="9" fill="#ff1e42" fill-opacity="0.15" stroke="#ff1e42" stroke-opacity="0.4" />
-    <circle cx="692" cy="9" r="3" fill="#ff1e42" filter="url(#neonFilter)" />
-    <text x="702" y="13" font-family="'Fira Code', monospace" font-size="9" font-weight="bold" fill="#ff1e42">FIAP ENG 26</text>
+    <rect x="670" y="0" width="120" height="18" rx="9" fill="#ff1e42" fill-opacity="0.15" stroke="#ff1e42" stroke-opacity="0.4" />
+    <circle cx="682" cy="9" r="3" fill="#ff1e42" filter="url(#neonFilter)" />
+    <text x="692" y="13" font-family="'Fira Code', monospace" font-size="9" font-weight="bold" fill="#ff1e42">FIAP ENG 22-26</text>
   </g>
 
   <line x1="35" y1="58" x2="815" y2="58" stroke="#1e293b" stroke-width="1" />
@@ -82,105 +79,94 @@
     <!-- Main Title -->
     <text x="0" y="24" class="cyber-title">OLÁ, SOU GUILHERME MACÁRIO 👋</text>
     
-    <!-- Subtitle -->
-    <text x="0" y="52" class="cyber-sub">// Eng. de Computação • Supply Chain, Data &amp; Cloud Architect</text>
+    <!-- Subtitle (Conforme solicitado) -->
+    <text x="0" y="50" class="cyber-sub">// FIAP Eng. de Computação • Data Engineer • Data Science • IA • ML</text>
     
-    <!-- Description -->
-    <text x="0" y="80" class="cyber-desc">Graduando em Engenharia de Computação pela FIAP (2022-2026).</text>
-    <text x="0" y="98" class="cyber-desc">Especialista em ecossistemas de dados de alta performance para Supply Chain &amp; Logística,</text>
-    <text x="0" y="116" class="cyber-desc">Data Warehouse (SAP EWM/SD/MM), Power BI com DAX complexo e automação Python.</text>
+    <!-- Description (Sobre Mim) -->
+    <text x="0" y="78" class="cyber-desc">Sempre fui fascinado pelo ecossistema tecnológico, hardware e pela engenharia</text>
+    <text x="0" y="96" class="cyber-desc">que faz os dispositivos funcionarem. Estudando engenharia reversa e mecânica interna.</text>
+    <text x="0" y="114" class="cyber-desc">Graduando FIAP com formações Alura em Data Science, IA e Analytics.</text>
 
     <!-- Tech Badges -->
-    <g transform="translate(0, 142)">
-      <!-- Badge 1: Python -->
-      <rect x="0" y="0" width="125" height="24" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-opacity="0.4" />
+    <g transform="translate(0, 140)">
+      <!-- Badge 1: Python AI -->
+      <rect x="0" y="0" width="130" height="24" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-opacity="0.4" />
       <circle cx="10" cy="12" r="3" fill="#fbbf24" />
-      <text x="20" y="16" class="cyber-badge">Python/PySpark</text>
+      <text x="20" y="16" class="cyber-badge">Python (AI &amp; POO)</text>
 
-      <!-- Badge 2: SQL DW -->
-      <rect x="135" y="0" width="125" height="24" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.4" />
-      <circle cx="145" cy="12" r="3" fill="#38bdf8" />
-      <text x="155" y="16" class="cyber-badge">SQL DW / SAP</text>
+      <!-- Badge 2: Data Engineering -->
+      <rect x="140" y="0" width="125" height="24" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.4" />
+      <circle cx="150" cy="12" r="3" fill="#38bdf8" />
+      <text x="160" y="16" class="cyber-badge">Data Engineering</text>
 
-      <!-- Badge 3: Power BI -->
-      <rect x="270" y="0" width="115" height="24" rx="6" fill="#0f172a" stroke="#facc15" stroke-opacity="0.4" />
-      <circle cx="280" cy="12" r="3" fill="#facc15" />
-      <text x="290" y="16" class="cyber-badge">Power BI/DAX</text>
+      <!-- Badge 3: IA & ML -->
+      <rect x="275" y="0" width="105" height="24" rx="6" fill="#0f172a" stroke="#34d399" stroke-opacity="0.4" />
+      <circle cx="285" cy="12" r="3" fill="#34d399" />
+      <text x="295" y="16" class="cyber-badge">IA &amp; ML / LLMs</text>
 
-      <!-- Badge 4: Power Apps -->
-      <rect x="395" y="0" width="95" height="24" rx="6" fill="#0f172a" stroke="#c084fc" stroke-opacity="0.4" />
-      <circle cx="405" cy="12" r="3" fill="#c084fc" />
-      <text x="415" y="16" class="cyber-badge">Power Apps</text>
+      <!-- Badge 4: Hardware & IoT -->
+      <rect x="390" y="0" width="115" height="24" rx="6" fill="#0f172a" stroke="#c084fc" stroke-opacity="0.4" />
+      <circle cx="400" cy="12" r="3" fill="#c084fc" />
+      <text x="410" y="16" class="cyber-badge">Hardware &amp; IoT</text>
     </g>
 
-    <!-- Metric Counters -->
+    <!-- Metric Counters (Power BIs privados contabilizados) -->
     <g transform="translate(0, 185)">
-      <!-- Metric 1: Power BIs -->
-      <rect x="0" y="0" width="115" height="46" rx="8" fill="#0c101a" stroke="#1e293b" />
-      <text x="12" y="24" class="cyber-metric-val">155+</text>
-      <text x="12" y="38" class="cyber-metric-lbl">Power BIs</text>
+      <!-- Metric 1: Power BIs Privados -->
+      <rect x="0" y="0" width="125" height="46" rx="8" fill="#0c101a" stroke="#eab308" stroke-opacity="0.4" />
+      <text x="12" y="24" class="cyber-metric-val" fill="#facc15">155+</text>
+      <text x="12" y="38" class="cyber-metric-lbl">PBIX (Privados 🔒)</text>
 
       <!-- Metric 2: SQL Scripts -->
-      <rect x="125" y="0" width="115" height="46" rx="8" fill="#0c101a" stroke="#1e293b" />
-      <text x="137" y="24" class="cyber-metric-val">45</text>
-      <text x="137" y="38" class="cyber-metric-lbl">SQL DW Scripts</text>
+      <rect x="135" y="0" width="115" height="46" rx="8" fill="#0c101a" stroke="#1e293b" />
+      <text x="147" y="24" class="cyber-metric-val">45</text>
+      <text x="147" y="38" class="cyber-metric-lbl">SQL DW Scripts</text>
 
       <!-- Metric 3: Challenges FIAP -->
-      <rect x="250" y="0" width="115" height="46" rx="8" fill="#0c101a" stroke="#1e293b" />
-      <text x="262" y="24" class="cyber-metric-val">5</text>
-      <text x="262" y="38" class="cyber-metric-lbl">Challenges FIAP</text>
+      <rect x="260" y="0" width="115" height="46" rx="8" fill="#0c101a" stroke="#1e293b" />
+      <text x="272" y="24" class="cyber-metric-val">5</text>
+      <text x="272" y="38" class="cyber-metric-lbl">Challenges FIAP</text>
 
       <!-- Metric 4: Commits -->
-      <rect x="375" y="0" width="115" height="46" rx="8" fill="#0c101a" stroke="#1e293b" />
-      <text x="387" y="24" class="cyber-metric-val">1.850+</text>
-      <text x="387" y="38" class="cyber-metric-lbl">Commits / Contrib</text>
+      <rect x="385" y="0" width="115" height="46" rx="8" fill="#0c101a" stroke="#1e293b" />
+      <text x="397" y="24" class="cyber-metric-val">1.850+</text>
+      <text x="397" y="38" class="cyber-metric-lbl">Commits / Contrib</text>
     </g>
   </g>
 
   <!-- RIGHT COLUMN: ROBOTIC MASCOT (Vector Art) -->
   <g transform="translate(580, 85)">
-    <!-- Halo glow -->
     <circle cx="130" cy="130" r="110" fill="#ff1e42" fill-opacity="0.12" filter="url(#neonFilter)" />
 
-    <!-- Headphones Band -->
     <path d="M80 110 C80 50 180 50 180 110" stroke="#1e293b" stroke-width="14" stroke-linecap="round" fill="none" />
     <path d="M85 110 C85 60 175 60 175 110" stroke="#334155" stroke-width="4" stroke-linecap="round" fill="none" />
 
-    <!-- Mascot Torso -->
     <path d="M75 235 C75 180 100 165 130 165 C160 165 185 180 185 235 Z" fill="#0b0e14" stroke="#1e293b" stroke-width="2" />
 
-    <!-- Helmet Head Base -->
     <rect x="75" y="65" width="110" height="100" rx="42" fill="#1e2533" stroke="#334155" stroke-width="3" />
-    
-    <!-- Visor -->
     <rect x="85" y="80" width="90" height="72" rx="30" fill="url(#visorGrad)" stroke="#0f172a" stroke-width="2" />
 
-    <!-- LED Visor Eyes (Mischievous) -->
     <polygon points="102,105 120,99 117,114 102,111" fill="#ff1e42" filter="url(#neonFilter)" />
     <polygon points="158,105 140,99 143,114 158,111" fill="#ff1e42" filter="url(#neonFilter)" />
 
-    <!-- Jagged Mouth -->
     <polyline points="108,130 115,135 122,130 130,136 138,130 145,135 152,130" fill="none" stroke="#ff1e42" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonFilter)" />
 
-    <!-- Left Earcup -->
     <rect x="60" y="90" width="22" height="45" rx="10" fill="#111827" stroke="#334155" stroke-width="2" />
     <circle cx="71" cy="112" r="10" fill="#0f172a" stroke="#ff1e42" stroke-width="2" filter="url(#neonFilter)" />
 
-    <!-- Right Earcup -->
     <rect x="178" y="90" width="22" height="45" rx="10" fill="#111827" stroke="#334155" stroke-width="2" />
     <circle cx="189" cy="112" r="10" fill="#0f172a" stroke="#00d2ff" stroke-width="2" filter="url(#neonFilter)" />
 
-    <!-- Speech bubble -->
     <g transform="translate(45, 10)">
       <rect x="0" y="0" width="170" height="26" rx="13" fill="#0b0e14" stroke="#ff1e42" stroke-opacity="0.6" stroke-width="1.5" />
       <circle cx="12" cy="13" r="3" fill="#ff1e42" filter="url(#neonFilter)" />
-      <text x="24" y="17" font-family="'Fira Code', monospace" font-size="9" font-weight="bold" fill="#e2e8f0">CORE: OVERCLOCK ON</text>
+      <text x="24" y="17" font-family="'Fira Code', monospace" font-size="9" font-weight="bold" fill="#e2e8f0">FIAP ENG: ONLINE</text>
     </g>
   </g>
 
-  <!-- Bottom Interactive Prompt Bar -->
+  <!-- Bottom Prompt Bar -->
   <g transform="translate(35, 345)">
-    <text x="0" y="14" font-family="'Fira Code', monospace" font-size="10" fill="#475569">STATUS: ONLINE // INTERACTIVE OVERRIDE READY</text>
+    <text x="0" y="14" font-family="'Fira Code', monospace" font-size="10" fill="#475569">STATUS: ONLINE // FIAP ENG COMPUTAÇÃO &amp; DATA SCIENCE</text>
     <text x="560" y="14" font-family="'Fira Code', monospace" font-size="10" fill="#ff1e42" font-weight="bold">CLIQUE PARA ABRIR O GITPAGE COMPLETO ▶</text>
   </g>
 </svg>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guilherme Macário // Cyber Portfolio & Systems Engineer</title>
+  <title>Guilherme Macário // FIAP Engenharia de Computação • Data Engineer & Data Science</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +15,7 @@
 
   <style>
     :root {
-      /* Default Theme: Crimson Cyber Studio (Mascot Edition) */
+      /* Default Theme: Crimson Cyber Studio */
       --color-primary: #ff1e42;
       --color-primary-rgb: 255, 30, 66;
       --color-primary-glow: rgba(255, 30, 66, 0.45);
@@ -33,7 +33,6 @@
       --border-card-hover: rgba(255, 30, 66, 0.65);
     }
 
-    /* Matrix Hacker Theme */
     body.theme-matrix {
       --color-primary: #00ff66;
       --color-primary-rgb: 0, 255, 102;
@@ -51,7 +50,6 @@
       --border-card-hover: rgba(0, 255, 102, 0.65);
     }
 
-    /* Cyberpunk 2077 Theme */
     body.theme-cyberpunk {
       --color-primary: #00f0ff;
       --color-primary-rgb: 0, 240, 255;
@@ -86,7 +84,6 @@
       font-family: 'Orbitron', 'Inter', sans-serif;
     }
 
-    /* Glow Card Styling with dynamic variables */
     .glow-card {
       position: relative;
       background: radial-gradient(circle at 85% 20%, rgba(var(--color-primary-rgb), 0.12), transparent 50%),
@@ -104,7 +101,6 @@
                   0 0 55px 5px var(--color-primary-glow);
     }
 
-    /* Laser Scanner Line */
     .scanline-beam {
       position: absolute;
       top: 0;
@@ -124,7 +120,6 @@
       opacity: 0;
     }
 
-    /* Mascot Ambient Floating Animation */
     @keyframes float-breathing {
       0%, 100% {
         transform: translateY(0px) rotate(0deg);
@@ -138,7 +133,6 @@
       animation: float-breathing 4.5s ease-in-out infinite;
     }
 
-    /* Equalizer Pulse animation in headphones */
     @keyframes eq-pulse {
       0%, 100% { height: 4px; }
       50% { height: 18px; }
@@ -149,7 +143,6 @@
     .eq-bar-3 { animation: eq-pulse 0.8s ease-in-out infinite 0.4s; }
     .eq-bar-4 { animation: eq-pulse 0.5s ease-in-out infinite 0.15s; }
 
-    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
@@ -170,30 +163,30 @@
 <body class="flex flex-col items-center justify-start p-3 sm:p-6 md:p-8 select-none min-h-screen">
 
   <!-- Top Global Header & Controls -->
-  <header class="w-full max-w-5xl mb-5 flex flex-wrap items-center justify-between gap-4 bg-[#0e121b]/95 backdrop-blur-md border border-[#212736] px-5 py-3.5 rounded-2xl shadow-2xl">
+  <header class="w-full max-w-5xl mb-6 flex flex-wrap items-center justify-between gap-4 bg-[#0e121b]/95 backdrop-blur-md border border-[#212736] px-5 py-3.5 rounded-2xl shadow-2xl">
     <div class="flex items-center gap-3">
       <!-- Mascot Avatar Icon in Bar -->
-      <a href="https://github.com/Guimemee" target="_blank" class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-[#161b26] to-[#252d3d] border border-[var(--color-primary)] flex items-center justify-center shadow-lg shadow-[var(--color-primary-glow)] overflow-hidden group">
+      <a href="https://github.com/Guimemee" target="_blank" class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-[#161b26] to-[#252d3d] border border-[var(--color-primary)] flex items-center justify-center shadow-lg shadow-[var(--color-primary-glow)] overflow-hidden group" title="GitHub de Guilherme Macário">
         <svg class="w-7 h-7 text-[var(--color-primary)] group-hover:scale-110 transition-all duration-300" viewBox="0 0 100 100" fill="currentColor">
           <circle cx="50" cy="50" r="38" fill="#111520" stroke="currentColor" stroke-width="4"/>
-          <!-- Helmet visor -->
           <rect x="25" y="35" width="50" height="30" rx="10" fill="#05070a"/>
-          <!-- Eyes -->
           <polygon points="32,46 44,42 41,52" fill="currentColor"/>
           <polygon points="68,46 56,42 59,52" fill="currentColor"/>
-          <!-- Jagged mouth -->
           <polyline points="38,58 43,62 48,58 52,62 57,58 62,62" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
         </svg>
       </a>
 
       <div>
+        <!-- Sem 'cyber core' e sem 'especialista' -->
         <h1 class="text-sm font-semibold tracking-wide text-white flex items-center gap-2 font-cyber">
-          GUILHERME MACÁRIO // CYBER CORE
+          GUILHERME MACÁRIO
           <span class="text-[10px] font-mono-code px-2 py-0.5 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30 font-bold">
-            FIAP • ENG. COMPUTAÇÃO
+            FIAP • ENGENHARIA DE COMPUTAÇÃO
           </span>
         </h1>
-        <p class="text-xs text-gray-400">Engenharia de Computação • Supply Chain, Data & Cloud Architect</p>
+        <p class="text-xs text-gray-400 font-mono-code mt-0.5">
+          Data Engineer • Data Science • IA • Machine Learning
+        </p>
       </div>
     </div>
 
@@ -202,19 +195,19 @@
       
       <!-- Theme Switcher -->
       <div class="flex items-center bg-[#080b12] border border-[#232938] rounded-xl p-1 text-xs">
-        <button id="theme-btn-crimson" class="theme-btn px-2.5 py-1 rounded-lg text-xs font-mono-code transition bg-[var(--color-primary)]/20 text-[var(--color-primary)] font-bold border border-[var(--color-primary)]/40" title="Tema Vermelho Carmesim">
+        <button id="theme-btn-crimson" class="theme-btn px-2.5 py-1 rounded-lg text-xs font-mono-code transition bg-[var(--color-primary)]/20 text-[var(--color-primary)] font-bold border border-[var(--color-primary)]/40" title="Tema Carmesim">
           Crimson
         </button>
         <button id="theme-btn-matrix" class="theme-btn px-2.5 py-1 rounded-lg text-xs font-mono-code transition text-gray-400 hover:text-white" title="Tema Matrix Terminal">
           Matrix
         </button>
-        <button id="theme-btn-cyberpunk" class="theme-btn px-2.5 py-1 rounded-lg text-xs font-mono-code transition text-gray-400 hover:text-white" title="Tema Neon Cyberpunk 2077">
+        <button id="theme-btn-cyberpunk" class="theme-btn px-2.5 py-1 rounded-lg text-xs font-mono-code transition text-gray-400 hover:text-white" title="Tema Neon Cyberpunk">
           Cyberpunk
         </button>
       </div>
 
       <!-- Audio Synth Toggle -->
-      <button id="btn-sound-toggle" class="flex items-center gap-1.5 bg-[#080b12] hover:bg-[#151a26] border border-[#232938] px-3 py-1.5 rounded-xl text-xs text-gray-300 transition" title="Alternar sintetizador de áudio">
+      <button id="btn-sound-toggle" class="flex items-center gap-1.5 bg-[#080b12] hover:bg-[#151a26] border border-[#232938] px-3 py-1.5 rounded-xl text-xs text-gray-300 transition" title="Alternar sintetizador sonoro">
         <svg id="sound-icon-on" class="w-3.5 h-3.5 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
           <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
@@ -227,16 +220,7 @@
         <span id="sound-text">SFX Audio</span>
       </button>
 
-      <!-- Customization Drawer Trigger -->
-      <button id="btn-edit-profile" class="flex items-center gap-1.5 bg-[#080b12] hover:bg-[#151a26] border border-[#232938] px-3 py-1.5 rounded-xl text-xs text-[var(--color-secondary)] transition font-mono-code">
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-        </svg>
-        <span>Customizar</span>
-      </button>
-
-      <!-- Replay Animation Button -->
+      <!-- Replay Decryptor -->
       <button id="btn-replay" class="flex items-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-rose-600 hover:brightness-110 text-white font-medium px-4 py-1.5 rounded-xl text-xs shadow-lg shadow-[var(--color-primary-glow)] transition active:scale-95 font-mono-code font-bold">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
@@ -247,11 +231,148 @@
   </header>
 
   <main class="w-full max-w-5xl flex flex-col items-center space-y-6">
-    
-    <!-- Outer GitHub Window Container -->
+
+    <!-- 1ª SEÇÃO (VEM PRIMEIRO): SOBRE MIM -->
+    <section class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl p-6 sm:p-8 shadow-xl">
+      <div class="flex items-center justify-between border-b border-[#232938] pb-4 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="p-2 rounded-xl bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30 text-lg">
+            🚀
+          </span>
+          <div>
+            <h2 class="text-xl font-bold text-white font-cyber flex items-center gap-2">
+              Sobre Mim
+            </h2>
+            <p class="text-xs text-gray-400 font-mono-code">Guilherme Macário • Engenharia de Computação & Trajetória Técnica</p>
+          </div>
+        </div>
+        
+        <a href="https://www.linkedin.com/in/guimemee/" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0077b5]/10 text-[#0077b5] border border-[#0077b5]/30 hover:bg-[#0077b5] hover:text-white transition text-xs font-mono-code font-bold">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+
+      <!-- Texto Oficial Fiel do Perfil do GitHub do Usuário -->
+      <div class="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed font-sans">
+        <p>
+          Sempre fui fascinado pelo ecossistema tecnológico, hardware e pela engenharia que faz os dispositivos funcionarem. Desde muito jovem, minha curiosidade me impulsionava a entender a mecânica interna das coisas ao invés de apenas consumi-las, o que me motivou a estudar engenharia reversa em softwares e hardware desde mais novo.
+        </p>
+        <p>
+          Atualmente, curso <b>Engenharia de Computação pela FIAP</b>, além de expandir constantemente meu repertório técnico com formações em Data Science e Análise de Dados pela <b>Alura</b> (ambas pertencentes ao mesmo grupo educacional).
+        </p>
+        <p class="text-gray-200">
+          Tenho experiência profissional prática iniciada logo no primeiro ano de graduação na área de dados, o que consolida o meu plano de carreira já direcionado para a <b>Pós-Graduação em Engenharia de Dados</b>.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2ª SEÇÃO (DEPOIS): HARD SKILLS & CONHECIMENTO TÉCNICO -->
+    <section class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl p-6 sm:p-8 shadow-xl">
+      <div class="border-b border-[#232938] pb-4 mb-6 flex items-center gap-3">
+        <span class="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/30 text-lg">
+          🛠️
+        </span>
+        <div>
+          <h2 class="text-xl font-bold text-white font-cyber">
+            Hard Skills & Conhecimento Técnico
+          </h2>
+          <p class="text-xs text-gray-400 font-mono-code">Competências consolidadas em Engenharia, Big Data, Automação & IA</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        
+        <!-- Bloco 1: Eletrônica, Robótica & IoT -->
+        <div class="p-5 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-cyan-400 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 text-cyan-400 text-xs font-mono-code font-bold uppercase mb-2">
+              <span>⚡</span>
+              <span>Engenharia Eletrônica, Robótica & IoT</span>
+            </div>
+            <ul class="text-xs text-gray-300 space-y-2 leading-relaxed">
+              <li>• <b>Eletrônica e Hardware:</b> Base técnica sólida adquirida em eletrônica no SENAI. Domínio em análise analógica e digital de circuitos complexos, potencial elétrico e sistemas embarcados.</li>
+              <li>• <b>Projetos de IoT:</b> Desenvolvimento e simulação usando <b>Arduino</b> e <b>ESP32</b>, projetando placas e circuitos com <b>KiCad</b>, <b>Proteus</b>, <b>Tinkercad</b> e diagnóstico com osciloscópios.</li>
+              <li>• <b>Sistemas Físicos:</b> Integração de sensores industriais e de telemetria, modelagem de atuadores e controle mecânico.</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400">Arduino</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400">ESP32</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400">KiCad</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400">C++ Embarcado</span>
+          </div>
+        </div>
+
+        <!-- Bloco 2: Engenharia de Dados, Big Data & BI -->
+        <div class="p-5 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-blue-400 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 text-blue-400 text-xs font-mono-code font-bold uppercase mb-2">
+              <span>📊</span>
+              <span>Engenharia de Dados, Big Data & BI</span>
+            </div>
+            <ul class="text-xs text-gray-300 space-y-2 leading-relaxed">
+              <li>• <b>Estrutura de Dados & Bancos:</b> SQL / T-SQL avançado (joins, CTEs, Views, DDL/DML, padronização técnica). Modelagem dimensional (Tabelas Fato e Dimensão, controle de histórico com SCD) e Data Mining.</li>
+              <li>• <b>Visualização & BI:</b> Excel avançado (VBA / Conexões ODBC) e <b>Power BI avançado</b> (linguagem DAX, Power Query / M) — com acervo de 155+ dashboards corporativos mantidos sob estrita confidencialidade.</li>
+              <li>• <b>Processamento & Big Data:</b> Projetos arquitetados com Databricks, Hadoop, Apache Sqoop, Microsoft Fabric, Azure, GCP e Git / DevOps.</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">SQL Server</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">Databricks</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-yellow-500/10 text-yellow-400">Power BI DAX (🔒 Privado)</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">Cloud DW</span>
+          </div>
+        </div>
+
+        <!-- Bloco 3: Programação & Inteligência Artificial -->
+        <div class="p-5 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-amber-400 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 text-amber-400 text-xs font-mono-code font-bold uppercase mb-2">
+              <span>🐍</span>
+              <span>Programação & Inteligência Artificial</span>
+            </div>
+            <ul class="text-xs text-gray-300 space-y-2 leading-relaxed">
+              <li>• <b>Python (POO Avançado):</b> Arquiteturas orientadas a objetos, classes, subclasses, herança, encapsulamento e estruturas de dados complexas (árvores binárias).</li>
+              <li>• <b>Inteligência Artificial:</b> Modelos de Machine Learning, NLP e visão computacional. Conectividade e orquestração de <b>Agentes e Subagentes de IA</b>, AI Harness e implantação do protocolo <b>MCP (Model Context Protocol)</b>.</li>
+              <li>• <b>Linguagens & Mobile:</b> RStudio, Kotlin, JavaScript, HTML/CSS, Qiskit (Computação Quântica), C++, Java e desenvolvimento mobile com React Native.</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">Python POO</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">IA & ML</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">MCP Protocol</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">React Native</span>
+          </div>
+        </div>
+
+        <!-- Bloco 4: Metodologias & Qualidade -->
+        <div class="p-5 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-purple-400 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 text-purple-400 text-xs font-mono-code font-bold uppercase mb-2">
+              <span>⚙️</span>
+              <span>Metodologias & Qualidade</span>
+            </div>
+            <ul class="text-xs text-gray-300 space-y-2 leading-relaxed">
+              <li>• <b>Yellow Belt Lean Six Sigma:</b> Certificação aplicada à melhoria contínua de rotinas, controle estatístico e otimização de processos.</li>
+              <li>• <b>Metodologias Ágeis:</b> Coordenação e gestão de cronogramas ágeis utilizando Scrum e Kanban aplicados a squads multidisciplinares.</li>
+              <li>• <b>Engenharia Reversa:</b> Investigação minuciosa de firmware, descompilação estruturada e análise de integridade física/lógica.</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">Yellow Belt Six Sigma</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">Scrum / Ágil</span>
+            <span class="text-[10px] font-mono-code px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">Engenharia Reversa</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3ª SEÇÃO: "DAI O QUADRADINHO DE CÓDIGOS" (HERO DECRYPTOR COM O MASCOTE INTERATIVO) -->
     <div class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl overflow-hidden shadow-2xl">
       
-      <!-- Top Titlebar / Terminal Tab Bar -->
+      <!-- Top Titlebar Terminal Tab Bar -->
       <div class="bg-[#0e121b] border-b border-[#232938] px-4 py-2.5 flex items-center justify-between text-xs text-gray-400">
         <div class="flex items-center gap-2">
           <span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-sm"></span>
@@ -266,26 +387,21 @@
         </div>
 
         <div class="flex items-center gap-3">
-          <!-- Active Mascot Mood pill in titlebar -->
           <div class="flex items-center gap-1.5 text-[11px] font-mono-code px-2 py-0.5 rounded bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30">
             <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-ping"></span>
-            <span>MASCOT: <b id="mascot-mood-label">MISCHIEVOUS</b></span>
+            <span>MASCOTE: <b id="mascot-mood-label">MISCHIEVOUS</b></span>
           </div>
         </div>
       </div>
 
       <div class="p-3 sm:p-5 md:p-6 bg-[#07090e]">
         
-        <!-- HERO CARD (The requested Decryptor section) -->
+        <!-- HERO CARD (O Quadradinho de Códigos Interativo) -->
         <div id="hero-card" class="glow-card relative rounded-2xl overflow-hidden p-5 sm:p-7 md:p-9 border">
           
-          <!-- Laser Beam Sweep element -->
           <div id="scan-beam" class="scanline-beam"></div>
-
-          <!-- Matrix Overlay Canvas for raining cyber characters -->
           <canvas id="matrix-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-30 opacity-60"></canvas>
 
-          <!-- Ambient Glow Blurs -->
           <div class="absolute -top-32 -right-32 w-80 h-80 rounded-full blur-3xl pointer-events-none bg-[var(--color-primary)] opacity-20"></div>
           <div class="absolute -bottom-32 -left-32 w-80 h-80 rounded-full blur-3xl pointer-events-none bg-[var(--color-secondary)] opacity-15"></div>
 
@@ -300,7 +416,6 @@
               <span class="text-[10px] font-mono-code text-gray-400 ml-1">branch: main</span>
             </div>
 
-            <!-- Terminal Hash status -->
             <div class="font-mono-code text-[11px] text-gray-500 flex items-center gap-2">
               <span class="hidden sm:inline text-gray-600">CIPHER:</span>
               <span id="status-hash" class="text-[var(--color-secondary)] tracking-wider">0x8F3D1A...</span>
@@ -309,7 +424,7 @@
 
           <div class="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            <!-- LEFT COLUMN: Profile Info, Tech Badges, Metrics & Mini Heatmap -->
+            <!-- LEFT COLUMN: Decryptor Text, Metrics & Heatmap -->
             <div class="lg:col-span-7 flex flex-col justify-center space-y-5">
               
               <!-- Greeting & Name -->
@@ -322,80 +437,58 @@
                 <!-- Role / Subtitle -->
                 <p class="text-[var(--color-primary)] font-semibold font-mono-code text-sm sm:text-base mt-2 tracking-wide flex items-center gap-2">
                   <span class="text-gray-500">//</span>
-                  <span class="decrypt-text" data-original="Eng. de Computação • Supply Chain, Data & Cloud Architect">Eng. de Computação • Supply Chain, Data & Cloud Architect</span>
+                  <span class="decrypt-text" data-original="FIAP Engenharia de Computação • Data Engineer • Data Science • IA • Machine Learning">FIAP Engenharia de Computação • Data Engineer • Data Science • IA • Machine Learning</span>
                 </p>
               </div>
 
-              <!-- Bio -->
-              <p class="text-gray-300 text-sm leading-relaxed">
-                <span class="decrypt-text" data-original="Graduando em Engenharia de Computação pela FIAP. Arquiteto de dados e desenvolvedor de ecossistemas de alta performance para Supply Chain & Logística (BASF, Eurofarma), Data Warehouse (SAP ERP, EWM, Synapse), Power BI avançado e automação Python.">
-                  Graduando em Engenharia de Computação pela FIAP. Arquiteto de dados e desenvolvedor de ecossistemas de alta performance para Supply Chain & Logística (BASF, Eurofarma), Data Warehouse (SAP ERP, EWM, Synapse), Power BI avançado e automação Python.
-                </span>
-              </p>
-
-              <!-- Tech Stack & Badges -->
+              <!-- Badges de Arsenais Técnicos -->
               <div>
                 <span class="text-[11px] uppercase tracking-wider font-mono-code text-gray-400 block mb-2 font-bold flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-[var(--color-primary)]"></span>
-                  Tech Stack & Arsenais Corporativos
+                  Tecnologias & Ferramentas
                 </span>
                 <div id="tech-badge-container" class="flex flex-wrap gap-2">
-                  <!-- Python AI & PySpark -->
                   <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-amber-400 shadow-sm transition hover:border-amber-400 hover:scale-105 cursor-default">
                     <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-                    <span>Python / PySpark</span>
+                    <span>Python (AI & POO)</span>
                   </div>
 
-                  <!-- SQL & SAP DW -->
                   <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-blue-400 shadow-sm transition hover:border-blue-400 hover:scale-105 cursor-default">
                     <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                    <span>SQL Server / SAP DW</span>
+                    <span>Data Engineering (SQL & Databricks)</span>
                   </div>
 
-                  <!-- Power BI & DAX -->
-                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-yellow-400 shadow-sm transition hover:border-yellow-400 hover:scale-105 cursor-default">
-                    <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
-                    <span>Power BI & DAX</span>
-                  </div>
-
-                  <!-- Power Apps -->
-                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-purple-400 shadow-sm transition hover:border-purple-400 hover:scale-105 cursor-default">
-                    <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-                    <span>Power Apps</span>
-                  </div>
-
-                  <!-- SAP EWM & Logistics -->
-                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-cyan-400 shadow-sm transition hover:border-cyan-400 hover:scale-105 cursor-default">
-                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-                    <span>SAP EWM / MM / SD</span>
-                  </div>
-
-                  <!-- Embedded C++ & Java -->
-                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-orange-400 shadow-sm transition hover:border-orange-400 hover:scale-105 cursor-default">
-                    <span class="w-2 h-2 rounded-full bg-orange-500"></span>
-                    <span>C++ & Java (IoT / Robótica)</span>
-                  </div>
-
-                  <!-- Docker & Cloud -->
                   <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-emerald-400 shadow-sm transition hover:border-emerald-400 hover:scale-105 cursor-default">
                     <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                    <span>Docker & Cloud (Azure/GCP)</span>
+                    <span>Machine Learning & IA</span>
+                  </div>
+
+                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-yellow-400 shadow-sm transition hover:border-yellow-400 hover:scale-105 cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                    <span>Power BI (DAX Avançado)</span>
+                  </div>
+
+                  <div class="tech-badge flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e121b]/90 border border-[#232938] text-xs font-mono-code text-cyan-400 shadow-sm transition hover:border-cyan-400 hover:scale-105 cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                    <span>Hardware, C++ & IoT</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Metric Counters -->
+              <!-- Metric Counters: 155+ Power BIs Privados contados e confidenciais -->
               <div class="pt-1">
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                  <!-- Metric 1: Power BIs -->
-                  <div class="stat-box p-3 rounded-xl bg-[#0e121b]/90 border border-[#232938] flex flex-col items-center sm:items-start transition hover:border-[var(--color-primary)]">
+                  
+                  <!-- Metric 1: Power BIs Corporativos (Privados) -->
+                  <div class="stat-box p-3 rounded-xl bg-[#0e121b]/90 border border-yellow-500/40 flex flex-col items-center sm:items-start transition hover:border-yellow-400 relative group" title="Projetos desenvolvidos em ambiente corporativo confidencial">
                     <div class="flex items-center gap-1.5 text-yellow-400 mb-1">
                       <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
-                        <path d="M2 11h4v7H2v-7zm6-5h4v12H8V6zm6-4h4v16h-4V2z"></path>
+                        <path d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"></path>
                       </svg>
-                      <span class="text-[10px] uppercase font-mono-code text-gray-400 font-bold">Power BIs</span>
+                      <span class="text-[9px] uppercase font-mono-code text-yellow-400 font-bold">PBIX (Privados 🔒)</span>
                     </div>
                     <span class="counter-number text-lg sm:text-xl font-bold font-mono-code text-white" data-target="155">0</span>
+                    <span class="text-[9px] font-mono-code text-yellow-500/80 mt-0.5">Confidenciais / Internos</span>
                   </div>
 
                   <!-- Metric 2: SQL Scripts DW -->
@@ -408,9 +501,10 @@
                       <span class="text-[10px] uppercase font-mono-code text-gray-400 font-bold">SQL DW Scripts</span>
                     </div>
                     <span class="counter-number text-lg sm:text-xl font-bold font-mono-code text-white" data-target="45">0</span>
+                    <span class="text-[9px] font-mono-code text-gray-500 mt-0.5">Pipelines & Modelagem</span>
                   </div>
 
-                  <!-- Metric 3: FIAP Challenges -->
+                  <!-- Metric 3: Challenges FIAP -->
                   <div class="stat-box p-3 rounded-xl bg-[#0e121b]/90 border border-[#232938] flex flex-col items-center sm:items-start transition hover:border-[var(--color-secondary)]">
                     <div class="flex items-center gap-1.5 text-[var(--color-secondary)] mb-1">
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -419,10 +513,11 @@
                       <span class="text-[10px] uppercase font-mono-code text-gray-400 font-bold">Challenges FIAP</span>
                     </div>
                     <span class="counter-number text-lg sm:text-xl font-bold font-mono-code text-white" data-target="5">0</span>
+                    <span class="text-[9px] font-mono-code text-gray-500 mt-0.5">Desafios Acadêmicos</span>
                   </div>
 
-                  <!-- Metric 4: Total Commits & Contribs -->
-                  <div class="stat-box p-3 rounded-xl bg-[#0e121b]/90 border border-[#232938] flex flex-col items-center sm:items-start transition hover:border-[var(--color-primary)]">
+                  <!-- Metric 4: Commits / Contrib -->
+                  <div class="stat-box p-3 rounded-xl bg-[#0e121b]/90 border border-[#232938] flex flex-col items-center sm:items-start transition hover:border-purple-400">
                     <div class="flex items-center gap-1.5 text-purple-400 mb-1">
                       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -430,6 +525,7 @@
                       <span class="text-[10px] uppercase font-mono-code text-gray-400 font-bold">Commits / Contrib</span>
                     </div>
                     <span class="counter-number text-lg sm:text-xl font-bold font-mono-code text-white" data-target="1850">0</span>
+                    <span class="text-[9px] font-mono-code text-gray-500 mt-0.5">Atividade Git</span>
                   </div>
                 </div>
               </div>
@@ -439,65 +535,52 @@
                 <div class="flex items-center justify-between text-[11px] font-mono-code text-gray-400">
                   <span class="flex items-center gap-1.5">
                     <span class="w-2 h-2 rounded-full bg-[var(--color-primary)]"></span>
-                    <span>Git Contribution Activity (Eng. Computação & Corporate Repos)</span>
+                    <span>Atividade de Desenvolvimento Git</span>
                   </span>
                   <span class="text-[10px] text-gray-400">Menos <span class="inline-block w-2 h-2 bg-[#1c2230] rounded-sm mx-0.5"></span><span class="inline-block w-2 h-2 bg-[var(--color-primary)]/40 rounded-sm mx-0.5"></span><span class="inline-block w-2 h-2 bg-[var(--color-primary)] rounded-sm mx-0.5"></span> Mais</span>
                 </div>
-                <!-- Mini Grid Matrix -->
-                <div id="heatmap-grid" class="flex gap-1 overflow-x-auto py-1">
-                  <!-- Dynamically populated via JS -->
-                </div>
+                <div id="heatmap-grid" class="flex gap-1 overflow-x-auto py-1"></div>
               </div>
 
             </div>
 
-            <!-- RIGHT COLUMN: THE ROBOTIC MASCOT (Faithfully inspired by the Studio Robot Image) -->
+            <!-- RIGHT COLUMN: THE ROBOTIC MASCOT -->
             <div class="lg:col-span-5 flex flex-col items-center justify-center p-2 relative">
-              
-              <!-- Ambient Studio Light Behind Mascot -->
               <div class="absolute w-64 h-64 rounded-full bg-[var(--color-primary)]/20 blur-3xl pointer-events-none transition-all duration-700"></div>
               <div class="absolute w-44 h-44 -bottom-4 rounded-full bg-[var(--color-secondary)]/15 blur-2xl pointer-events-none transition-all duration-700"></div>
 
-              <!-- Mascot Interactive Box -->
               <div id="mascot-interactive-area" class="mascot-floating relative w-full max-w-[340px] aspect-square flex flex-col items-center justify-center cursor-pointer group">
                 
-                <!-- Mascot Speech/Status Bubble -->
                 <div class="absolute -top-7 px-3 py-1 bg-[#101420]/90 backdrop-blur-md border border-[var(--color-primary)]/60 rounded-full text-[10px] font-mono-code text-gray-200 shadow-lg flex items-center gap-1.5 transition-all group-hover:scale-105 pointer-events-none z-30">
                   <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-ping"></span>
                   <span id="mascot-dialogue">"Clique para mudar meu humor!"</span>
                 </div>
 
-                <!-- Mascot Main SVG Vector Model -->
                 <svg id="mascot-svg" class="w-full h-full drop-shadow-[0_15px_30px_rgba(0,0,0,0.85)] filter" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
-                    <!-- Visor Gloss Reflection Gradient -->
                     <linearGradient id="visorGlassGrad" x1="140" y1="120" x2="260" y2="280" gradientUnits="userSpaceOnUse">
                       <stop offset="0%" stop-color="#1a202c" stop-opacity="0.9" />
                       <stop offset="45%" stop-color="#0a0d14" stop-opacity="0.98" />
                       <stop offset="100%" stop-color="#050608" />
                     </linearGradient>
 
-                    <!-- Metallic Helmet Texture -->
                     <radialGradient id="helmetMetal" cx="200" cy="180" r="160" gradientUnits="userSpaceOnUse">
                       <stop offset="0%" stop-color="#3a4252" />
                       <stop offset="60%" stop-color="#1d222d" />
                       <stop offset="100%" stop-color="#0e1117" />
                     </radialGradient>
 
-                    <!-- Neon Light Ring Gradient -->
                     <linearGradient id="neonEarcupGrad" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="0%" stop-color="var(--color-primary)" />
                       <stop offset="100%" stop-color="var(--color-secondary)" />
                     </linearGradient>
 
-                    <!-- Specular Curved Highlight -->
                     <linearGradient id="visorReflection" x1="150" y1="140" x2="230" y2="220" gradientUnits="userSpaceOnUse">
                       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25" />
                       <stop offset="40%" stop-color="#ffffff" stop-opacity="0.05" />
                       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
                     </linearGradient>
 
-                    <!-- Glow filter for Visor LEDs -->
                     <filter id="neonGlowFilter" x="-20%" y="-20%" width="140%" height="140%">
                       <feGaussianBlur stdDeviation="5" result="blur" />
                       <feMerge>
@@ -508,20 +591,15 @@
                     </filter>
                   </defs>
 
-                  <!-- Background Cyber Studio Aura & Soundwaves -->
                   <g opacity="0.4">
                     <circle cx="200" cy="200" r="175" stroke="var(--color-primary)" stroke-width="1" stroke-dasharray="6 8" />
                     <circle cx="200" cy="200" r="190" stroke="var(--color-secondary)" stroke-width="0.7" stroke-dasharray="3 6" opacity="0.6" />
                   </g>
 
-                  <!-- Studio Mascot Torso / Hoodie & Cybernetic Hands -->
                   <g id="mascot-body">
-                    <!-- Black Heavy Hoodie Torso -->
                     <path d="M120 370 C120 280 155 260 200 260 C245 260 280 280 280 370 Z" fill="#0d1017" stroke="#1f2636" stroke-width="2" />
-                    <!-- Neckline fold -->
                     <path d="M165 265 C185 285 215 285 235 265" stroke="#252d3f" stroke-width="4" stroke-linecap="round" fill="none" />
                     
-                    <!-- Left Cyber Arm & Fingers -->
                     <g id="left-cyber-arm">
                       <path d="M130 300 L110 340 L125 385" stroke="#2a3245" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                       <rect x="110" y="345" width="12" height="7" rx="3" fill="#4a5568" stroke="#1a202c" stroke-width="1.5"/>
@@ -530,7 +608,6 @@
                       <circle cx="110" cy="340" r="4" fill="var(--color-primary)" filter="url(#neonGlowFilter)"/>
                     </g>
 
-                    <!-- Right Cyber Arm & Fingers -->
                     <g id="right-cyber-arm">
                       <path d="M270 300 L290 340 L275 385" stroke="#2a3245" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                       <rect x="278" y="345" width="12" height="7" rx="3" fill="#4a5568" stroke="#1a202c" stroke-width="1.5"/>
@@ -540,53 +617,43 @@
                     </g>
                   </g>
 
-                  <!-- Studio Headphones Headband -->
                   <path d="M125 170 C125 80 275 80 275 170" stroke="#161b26" stroke-width="20" stroke-linecap="round" fill="none" />
                   <path d="M132 170 C132 95 268 95 268 170" stroke="#2a3449" stroke-width="6" stroke-linecap="round" fill="none" />
 
-                  <!-- Helmet Base & Metallic Texture -->
                   <g id="helmet-head-group">
                     <rect x="120" y="105" width="160" height="150" rx="65" fill="url(#helmetMetal)" stroke="#384357" stroke-width="4" />
                     
-                    <!-- Industrial Rivets & Bolts -->
                     <circle cx="150" cy="120" r="2.5" fill="#718096" />
                     <circle cx="200" cy="112" r="2.5" fill="#718096" />
                     <circle cx="250" cy="120" r="2.5" fill="#718096" />
                     <circle cx="130" cy="180" r="2.5" fill="#718096" />
                     <circle cx="270" cy="180" r="2.5" fill="#718096" />
 
-                    <!-- Glossy Curved Black Visor Screen -->
                     <rect x="135" y="125" width="130" height="110" rx="46" fill="url(#visorGlassGrad)" stroke="#1a202c" stroke-width="3" />
                     
-                    <!-- Specular Glare -->
                     <path d="M148 140 C175 130 225 130 252 140 C220 148 180 148 148 140 Z" fill="url(#visorReflection)" />
                     <ellipse cx="160" cy="150" rx="14" ry="7" fill="#ffffff" opacity="0.12" transform="rotate(-15 160 150)" />
 
-                    <!-- DYNAMIC LED VISOR FACE -->
+                    <!-- LED Visor Face -->
                     <g id="mascot-face-group" filter="url(#neonGlowFilter)" class="transition-transform duration-100 ease-out">
-                      
-                      <!-- Default Mood: MISCHIEVOUS >:] -->
                       <g id="mood-mischievous">
                         <polygon points="160,162 188,154 184,176 160,172" fill="var(--color-primary)" />
                         <polygon points="240,162 212,154 216,176 240,172" fill="var(--color-primary)" />
                         <polyline points="166,198 178,206 189,198 200,208 211,198 222,206 234,198" fill="none" stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
                       </g>
 
-                      <!-- Mood 2: HAPPY ^^ -->
                       <g id="mood-happy" class="hidden">
                         <path d="M162 172 Q174 152 186 172" fill="none" stroke="var(--color-primary)" stroke-width="5.5" stroke-linecap="round"/>
                         <path d="M214 172 Q226 152 238 172" fill="none" stroke="var(--color-primary)" stroke-width="5.5" stroke-linecap="round"/>
                         <path d="M174 195 Q200 216 226 195 Z" fill="var(--color-primary)" stroke="var(--color-primary)" stroke-width="2"/>
                       </g>
 
-                      <!-- Mood 3: SCANNING / TERMINAL RADAR -->
                       <g id="mood-scan" class="hidden">
                         <line x1="160" y1="166" x2="188" y2="166" stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round"/>
                         <line x1="212" y1="166" x2="240" y2="166" stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round"/>
                         <text x="200" y="206" fill="var(--color-primary)" font-family="monospace" font-size="14" font-weight="bold" text-anchor="middle" letter-spacing="3">&lt;SCAN&gt;</text>
                       </g>
 
-                      <!-- Mood 4: WINKING ;] -->
                       <g id="mood-wink" class="hidden">
                         <line x1="160" y1="168" x2="188" y2="168" stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round"/>
                         <polygon points="240,162 212,154 216,176 240,172" fill="var(--color-primary)" />
@@ -595,7 +662,6 @@
                     </g>
                   </g>
 
-                  <!-- Heavy Over-Ear Headphones -->
                   <g id="left-earcup">
                     <rect x="94" y="145" width="34" height="65" rx="16" fill="#141822" stroke="#2c364c" stroke-width="3" />
                     <circle cx="111" cy="177" r="15" fill="#0d1118" stroke="url(#neonEarcupGrad)" stroke-width="3.5" filter="url(#neonGlowFilter)" />
@@ -618,7 +684,6 @@
 
                 </svg>
 
-                <!-- Mascot Click Hint Footnote -->
                 <span class="text-[10px] font-mono-code text-gray-500 mt-2 flex items-center gap-1">
                   <svg class="w-3 h-3 text-[var(--color-primary)] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
@@ -637,10 +702,10 @@
             <div class="flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-[var(--color-primary)]"></span>
               <span class="text-gray-400">STATUS:</span>
-              <span class="text-[var(--color-primary)] font-bold">ONLINE // FIAP_ENGINEER</span>
+              <span class="text-[var(--color-primary)] font-bold">ONLINE // FIAP_DATA_ENGINEER</span>
             </div>
             <div class="text-[11px] text-gray-400">
-              <span class="text-[var(--color-secondary)]">git commit -m</span> "Engineering, data intelligence & cyber aesthetics."
+              <span class="text-[var(--color-secondary)]">git commit -m</span> "Transformando dados em inteligência e código em soluções de alto impacto."
             </div>
           </div>
 
@@ -649,115 +714,115 @@
 
     </div>
 
-    <!-- SECTION: FIAP CHALLENGES & MAJOR PROJECTS SHOWCASE -->
-    <section class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl p-5 sm:p-7 shadow-xl">
+    <!-- 4ª SEÇÃO: PROJETOS DE DESTAQUE & ENGENHARIA FIAP -->
+    <section class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl p-6 sm:p-8 shadow-xl">
       <div class="flex items-center justify-between border-b border-[#232938] pb-4 mb-6">
         <div>
           <h3 class="text-lg font-bold text-white font-cyber flex items-center gap-2">
-            <span class="text-[var(--color-primary)]">//</span> PROJETOS & CHALLENGES EM DESTAQUE
+            <span class="text-[var(--color-primary)]">//</span> PROJETOS DE DESTAQUE & ENGENHARIA FIAP
           </h3>
-          <p class="text-xs text-gray-400 font-mono-code mt-0.5">Engenharia de Computação FIAP (2022 - 2026) & Projetos Corporativos</p>
+          <p class="text-xs text-gray-400 font-mono-code mt-0.5">Engenharia de Computação FIAP (2022 - 2026) & Soluções Avançadas</p>
         </div>
         <a href="https://github.com/Guimemee?tab=repositories" target="_blank" class="text-xs font-mono-code text-[var(--color-secondary)] hover:underline flex items-center gap-1">
-          <span>Ver todos os repositórios</span>
+          <span>Repositórios</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
         </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         
-        <!-- Project 1: Challenge 2026 -->
+        <!-- Projeto 1: Exoesqueleto Oswaldo Cruz -->
+        <a href="https://github.com/Guimemee/fiap-challenge-2022-haoc" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-cyan-400 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+              <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Hosp. Oswaldo Cruz</span>
+              <span>NeuroSky & Hardware</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-cyan-400 transition">🦿 Exoesqueleto & Interface Cérebro-Máquina</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Códigos C/C++ para calibração de sensores biomédicos, telemetria em tempo real do esforço físico/mental e analytics clínico para reabilitação médica.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+            <span>Arduino • C++ • Telemetria</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Projeto 2: Sanofi Challenge -->
+        <a href="https://github.com/Guimemee/fiap-challenge-2024-sanofi" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-purple-400 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+              <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/30">Sanofi Pharma</span>
+              <span>AI & Big Data</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-purple-400 transition">🏆 Sanofi Challenge (FIAP)</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Modelos de NLP e Visão Computacional, assistentes virtuais Generative AI, pipeline Oracle Cloud com Hadoop/Sqoop e app mobile React Native.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+            <span>Oracle Cloud • Hadoop • NLP</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Projeto 3: Smart Industry 2026 -->
         <a href="https://github.com/Guimemee/fiap-challenge-2026-smart-industry" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30">2026 • 5º Ano</span>
-              <span>Smart Industry</span>
+              <span class="px-2 py-0.5 rounded bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30">2026 • 5º Ano FIAP</span>
+              <span>Indústria 4.0</span>
             </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-[var(--color-primary)] transition">fiap-challenge-2026-smart-industry</h4>
-            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Sistemas Cyber-Físicos, Visão Computacional, IA Industrial & Automação Fabril Avançada.</p>
+            <h4 class="text-sm font-bold text-white group-hover:text-[var(--color-primary)] transition">⚙️ Smart Industry & Manufatura Avançada</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Sistemas Cyber-Físicos, Visão Computacional aplicada ao controle de qualidade industrial e inteligência preditiva de maquinários.</p>
           </div>
           <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>Python • C++ • IoT</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+            <span>Python • C++ • OpenCV</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
           </div>
         </a>
 
-        <!-- Project 2: Challenge 2025 -->
-        <a href="https://github.com/Guimemee/fiap-challenge-2025-spi-metaindustria" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
+        <!-- Projeto 4: SPI Meta-indústria 2025 -->
+        <a href="https://github.com/Guimemee/fiap-challenge-2025-spi-metaindustria" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-blue-400 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">2025 • 4º Ano</span>
-              <span>SPI Meta-indústria</span>
+              <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">2025 • 4º Ano FIAP</span>
+              <span>Gêmeos Digitais</span>
             </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition">fiap-challenge-2025-spi-metaindustria</h4>
-            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Gêmeos Digitais, Integração Robótica, CAD 3D e Modelos Preditivos de Chão de Fábrica.</p>
+            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition">🌐 SPI Meta-indústria & Robótica</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Ambientes virtuais para simulação fabril, integração robótica, CAD 3D no Autodesk Inventor e modelagem de chão de fábrica.</p>
           </div>
           <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>CAD • Digital Twin • PyTorch</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+            <span>Digital Twin • CAD 3D • Robótica</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
           </div>
         </a>
 
-        <!-- Project 3: Challenge 2024 Sanofi -->
-        <a href="https://github.com/Guimemee/fiap-challenge-2024-sanofi" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
+        <!-- Projeto 5: Natura Sustentabilidade -->
+        <a href="https://github.com/Guimemee/fiap-challenge-2023-natura" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-emerald-400 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/30">2024 • 3º Ano</span>
-              <span>Sanofi Pharma</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">2023 • 2º Ano FIAP</span>
+              <span>Economia Circular</span>
             </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-purple-400 transition">fiap-challenge-2024-sanofi</h4>
-            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Inovação em Saúde Digital, Cadeia de Suprimentos Farmacêutica e Telemetria de Pacientes.</p>
+            <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition">🌿 Natura Logística Reversa</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Otimização de rotas sustentáveis, tracking de embalagens recicladas e integração com bancos de dados relacionais e em nuvem.</p>
           </div>
           <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>Data Analytics • Mobile • IoT</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+            <span>Supply Chain • SQL • Cloud</span>
+            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
           </div>
         </a>
 
-        <!-- Project 4: Challenge 2023 Natura -->
-        <a href="https://github.com/Guimemee/fiap-challenge-2023-natura" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">2023 • 2º Ano</span>
-              <span>Natura</span>
-            </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition">fiap-challenge-2023-natura</h4>
-            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Logística Reversa Sustentável, Economia Circular e Rastreamento de Resíduos.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>Sustentabilidade • Cloud • SQL</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Project 5: Challenge 2022 HAOC -->
-        <a href="https://github.com/Guimemee/fiap-challenge-2022-haoc" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">2022 • 1º Ano</span>
-              <span>Hosp. Oswaldo Cruz</span>
-            </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-cyan-400 transition">fiap-challenge-2022-haoc</h4>
-            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Otimização de Fluxo Hospitalar, Triagem Ágil e Engenharia de Software.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>Java • MySQL • UI/UX</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Project 6: Master Engineering Portfolio -->
+        <!-- Projeto 6: Master Engineering Portfolio -->
         <a href="https://github.com/Guimemee/fiap-computer-engineering-portfolio" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-yellow-400 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-yellow-400/10 text-yellow-400 border border-yellow-400/30">Master Repositório</span>
-              <span>5 Anos FIAP</span>
+              <span class="px-2 py-0.5 rounded bg-yellow-400/10 text-yellow-400 border border-yellow-400/30">Portfólio FIAP</span>
+              <span>9 Cadeiras Acadêmicas</span>
             </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-yellow-400 transition">fiap-computer-engineering-portfolio</h4>
-            <p class="text-xs text-gray-400 mt-2 line-clamp-2">Portfólio integral unificado: 9 matérias, 5 desafios e arquitetura de engenharia.</p>
+            <h4 class="text-sm font-bold text-white group-hover:text-yellow-400 transition">🎓 Acervo Master de Engenharia FIAP</h4>
+            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Repositório mestre documentando 5 anos de graduação: IoT, Sistemas Operacionais, IA, Computação Quântica, CAD e Circuitos Digitais.</p>
           </div>
           <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>Portfolio • Docs • Showcase</span>
+            <span>Documentação • Código • Pesquisa</span>
             <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
           </div>
         </a>
@@ -765,25 +830,25 @@
       </div>
     </section>
 
-    <!-- SECTION: INTERACTIVE CYBER TERMINAL CLI -->
+    <!-- 5ª SEÇÃO: TERMINAL CLI INTERATIVO -->
     <section class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl p-5 sm:p-6 shadow-xl font-mono-code">
       <div class="flex items-center justify-between border-b border-[#232938] pb-3 mb-4 text-xs text-gray-400">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
           <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
           <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
-          <span class="ml-2 text-gray-300">terminal@guilherme-macario:~ (interactive bash)</span>
+          <span class="ml-2 text-gray-300">terminal@guilherme-macario:~ (bash shell)</span>
         </div>
         <span class="text-[11px] text-gray-500">Digite <b class="text-[var(--color-secondary)]">help</b> para comandos</span>
       </div>
 
       <div id="terminal-output" class="text-xs space-y-1.5 max-h-48 overflow-y-auto mb-3 text-gray-300">
-        <p class="text-[var(--color-secondary)]">Cyber Shell Terminal Initialized [v3.4.2]</p>
-        <p class="text-gray-400">Pronto para execução. Digite um comando como <b class="text-white">about</b>, <b class="text-white">skills</b>, <b class="text-white">projects</b> ou <b class="text-white">contact</b>.</p>
+        <p class="text-[var(--color-secondary)]">Cyber Shell Terminal Initialized [v3.5.0]</p>
+        <p class="text-gray-400">Pronto para execução. Digite <b class="text-white">about</b>, <b class="text-white">skills</b>, <b class="text-white">projects</b> ou <b class="text-white">contact</b>.</p>
       </div>
 
       <div class="flex items-center gap-2 text-xs">
-        <span class="text-[var(--color-primary)] font-bold">guilherme@core:~$</span>
+        <span class="text-[var(--color-primary)] font-bold">guilherme@fiap:~$</span>
         <input type="text" id="terminal-input" placeholder="digite aqui..." class="flex-1 bg-transparent border-none text-white focus:outline-none">
       </div>
     </section>
@@ -793,75 +858,19 @@
       <div class="flex items-center gap-3">
         <span>&copy; 2026 Guilherme Macário</span>
         <span>•</span>
+        <a href="https://www.linkedin.com/in/guimemee/" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
+        <span>•</span>
         <a href="https://github.com/Guimemee" target="_blank" class="hover:text-[var(--color-primary)] transition">GitHub @Guimemee</a>
       </div>
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="text-gray-400">Hosted via GitHub Pages</span>
+        <span class="text-gray-400">Hosted via GitHub Pages (https://guimemee.github.io)</span>
       </div>
     </footer>
 
   </main>
 
-  <!-- Edit Profile Drawer / Modal -->
-  <div id="edit-drawer" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="bg-[#0e121b] border border-[var(--color-primary)]/40 w-full max-w-lg rounded-2xl p-6 shadow-2xl space-y-4 transform scale-95 transition-transform duration-300" id="drawer-panel">
-      <div class="flex items-center justify-between border-b border-[#232938] pb-3">
-        <h3 class="text-sm font-bold text-white flex items-center gap-2 font-cyber">
-          <svg class="w-4 h-4 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-          </svg>
-          Customizar Dados do Perfil
-        </h3>
-        <button id="btn-close-drawer" class="text-gray-400 hover:text-white p-1 rounded-lg">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-      </div>
-
-      <div class="space-y-3 text-xs font-mono-code">
-        <div>
-          <label class="block text-gray-400 mb-1">Seu Nome / Título:</label>
-          <input type="text" id="input-name" value="Olá, sou Guilherme Macário" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
-        </div>
-        <div>
-          <label class="block text-gray-400 mb-1">Cargo / Especialidade:</label>
-          <input type="text" id="input-role" value="Eng. de Computação • Supply Chain, Data & Cloud Architect" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
-        </div>
-        <div>
-          <label class="block text-gray-400 mb-1">Bio / Resumo:</label>
-          <textarea id="input-bio" rows="2" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">Graduando em Engenharia de Computação pela FIAP. Arquiteto de dados e desenvolvedor de ecossistemas de alta performance para Supply Chain & Logística (BASF, Eurofarma), Data Warehouse (SAP ERP, EWM, Synapse), Power BI avançado e automação Python.</textarea>
-        </div>
-        <div class="grid grid-cols-2 gap-2">
-          <div>
-            <label class="block text-gray-400 mb-1">Power BIs:</label>
-            <input type="number" id="input-stars" value="155" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
-          </div>
-          <div>
-            <label class="block text-gray-400 mb-1">SQL Scripts DW:</label>
-            <input type="number" id="input-repos" value="45" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
-          </div>
-          <div>
-            <label class="block text-gray-400 mb-1">Challenges FIAP:</label>
-            <input type="number" id="input-contribs" value="5" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
-          </div>
-          <div>
-            <label class="block text-gray-400 mb-1">Commits / Contrib:</label>
-            <input type="number" id="input-followers" value="1850" class="w-full bg-[#07090e] border border-[#232938] rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[var(--color-primary)]">
-          </div>
-        </div>
-      </div>
-
-      <div class="flex justify-end gap-2 pt-2 border-t border-[#232938]">
-        <button id="btn-save-drawer" class="bg-[var(--color-primary)] hover:brightness-110 text-white font-medium px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 transition font-mono-code font-bold">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-          Salvar & Decodificar
-        </button>
-      </div>
-    </div>
-  </div>
-
   <script>
-    /* Synthetic Web Audio API Sound Generator */
     class CyberAudioEngine {
       constructor() {
         this.ctx = null;
@@ -1121,10 +1130,10 @@
 
     let currentMoodIndex = 0;
     const moodList = [
-      { id: 'mood-mischievous', label: 'MISCHIEVOUS', dialogue: '">:] Overclock total em Supply Chain & DW!"' },
-      { id: 'mood-happy', label: 'HAPPY ^^', dialogue: '"^^ Modelo DAX e SAP EWM conciliados 100%!"' },
-      { id: 'mood-scan', label: 'MATRIX SCAN', dialogue: '"[SCAN] Varrendo pipelines e tabelas de carga..."' },
-      { id: 'mood-wink', label: 'CYBER WINK', dialogue: '";] Engenharia pura: hardware + cloud + dados."' }
+      { id: 'mood-mischievous', label: 'MISCHIEVOUS', dialogue: '">:] Overclock total em Engenharia de Dados & IA!"' },
+      { id: 'mood-happy', label: 'HAPPY ^^', dialogue: '"^^ Modelos de Machine Learning e DW conciliados 100%!"' },
+      { id: 'mood-scan', label: 'MATRIX SCAN', dialogue: '"[SCAN] Varrendo pipelines, sensores IoT e dados..."' },
+      { id: 'mood-wink', label: 'CYBER WINK', dialogue: '";] Curiosidade + Engenharia = Inovação."' }
     ];
 
     function setupMascotInteractions() {
@@ -1210,7 +1219,7 @@
             if (Math.random() > 0.72) sound.playBlip(950 + Math.random() * 550);
           });
           scrambler.start(1.0);
-        }, index * 120);
+        }, index * 90);
       });
 
       const badges = document.querySelectorAll('.tech-badge');
@@ -1222,7 +1231,7 @@
         setTimeout(() => {
           b.style.opacity = '1';
           b.style.transform = 'translateY(0) scale(1)';
-        }, 350 + i * 80);
+        }, 300 + i * 70);
       });
 
       setTimeout(() => {
@@ -1230,7 +1239,7 @@
           const target = parseInt(c.getAttribute('data-target'), 10) || 0;
           animateValue(c, 0, target, 1200);
         });
-      }, 500);
+      }, 450);
 
       buildHeatmap();
 
@@ -1250,7 +1259,6 @@
       }, scanDuration + 200);
     }
 
-    // Interactive Terminal Logic
     function setupTerminal() {
       const termInput = document.getElementById('terminal-input');
       const termOutput = document.getElementById('terminal-output');
@@ -1262,20 +1270,20 @@
           termInput.value = '';
 
           const pUser = document.createElement('p');
-          pUser.innerHTML = `<span class="text-[var(--color-primary)] font-bold">guilherme@core:~$</span> ${val}`;
+          pUser.innerHTML = `<span class="text-[var(--color-primary)] font-bold">guilherme@fiap:~$</span> ${val}`;
           termOutput.appendChild(pUser);
 
           const pResp = document.createElement('p');
           if (val === 'help') {
-            pResp.innerHTML = `<span class="text-[var(--color-secondary)]">Comandos disponíveis:</span><br>&bull; <b class="text-white">about</b>: Resumo profissional e formação FIAP<br>&bull; <b class="text-white">skills</b>: Lista do stack tecnológico<br>&bull; <b class="text-white">projects</b>: Links rápidos dos Challenges FIAP & DW<br>&bull; <b class="text-white">contact</b>: Links de conexão e GitHub<br>&bull; <b class="text-white">clear</b>: Limpa a tela do terminal`;
+            pResp.innerHTML = `<span class="text-[var(--color-secondary)]">Comandos disponíveis:</span><br>&bull; <b class="text-white">about</b>: Resumo da formação e trajetória<br>&bull; <b class="text-white">skills</b>: Lista do stack tecnológico<br>&bull; <b class="text-white">projects</b>: Links rápidos dos Challenges FIAP<br>&bull; <b class="text-white">contact</b>: Links de conexão e LinkedIn<br>&bull; <b class="text-white">clear</b>: Limpa a tela do terminal`;
           } else if (val === 'about') {
-            pResp.innerHTML = `Guilherme Macário &bull; Engenharia de Computação (FIAP 2022-2026). Atuação destacada em Data Warehousing, SAP ERP (EWM/MM/SD), automação analítica de Supply Chain farmacêutico e de cosméticos (BASF, Eurofarma), Power BI com DAX avançado e soluções Power Platform.`;
+            pResp.innerHTML = `Guilherme Macário &bull; Estudante de Engenharia de Computação pela FIAP e formações Alura em Data Science/Analytics. Apaixonado por engenharia reversa, hardware e soluções escaláveis de dados.`;
           } else if (val === 'skills') {
-            pResp.innerHTML = `[STACK]: Python, PySpark, T-SQL, SAP ERP/EWM, Power BI, DAX, Power Apps, C++, Java, Azure Synapse, GCP BigQuery, Docker, Git.`;
+            pResp.innerHTML = `[STACK]: Python (POO Avançado), PySpark, Data Science, IA & Machine Learning, T-SQL, SAP ERP/EWM, C++, Arduino/ESP32, IoT, Power Apps, Docker, Databricks, Oracle Cloud.`;
           } else if (val === 'projects') {
-            pResp.innerHTML = `5 Challenges FIAP entregues:<br>1. Smart Industry 2026 (IA & Visão)<br>2. SPI Meta-indústria 2025 (Digital Twin)<br>3. Sanofi 2024 (Saúde & Cadeia Farmacêutica)<br>4. Natura 2023 (Logística Reversa)<br>5. HAOC 2022 (Gestão Hospitalar)`;
+            pResp.innerHTML = `Destaques:<br>1. Exoesqueleto com Interface Cérebro-Máquina (Hospital Oswaldo Cruz - NeuroSky)<br>2. Sanofi Challenge (FIAP - IA, NLP & Big Data)<br>3. Smart Industry 2026<br>4. SPI Meta-indústria 2025<br>5. Natura 2023`;
           } else if (val === 'contact') {
-            pResp.innerHTML = `GitHub: <a href="https://github.com/Guimemee" target="_blank" class="text-[var(--color-secondary)] underline">github.com/Guimemee</a><br>Email: guilhermemegatherion@hotmail.com`;
+            pResp.innerHTML = `LinkedIn: <a href="https://www.linkedin.com/in/guimemee/" target="_blank" class="text-blue-400 underline">linkedin.com/in/guimemee</a><br>GitHub: <a href="https://github.com/Guimemee" target="_blank" class="text-[var(--color-secondary)] underline">github.com/Guimemee</a>`;
           } else if (val === 'clear') {
             termOutput.innerHTML = '';
             return;
@@ -1353,58 +1361,6 @@
           iconOff.classList.remove('hidden');
           soundText.innerText = 'Mudo';
         }
-      });
-
-      // Customization Drawer Logic
-      const editBtn = document.getElementById('btn-edit-profile');
-      const drawer = document.getElementById('edit-drawer');
-      const drawerPanel = document.getElementById('drawer-panel');
-      const closeBtn = document.getElementById('btn-close-drawer');
-      const saveBtn = document.getElementById('btn-save-drawer');
-
-      function openDrawer() {
-        drawer.classList.remove('opacity-0', 'pointer-events-none');
-        drawerPanel.classList.remove('scale-95');
-        drawerPanel.classList.add('scale-100');
-      }
-
-      function closeDrawer() {
-        drawer.classList.add('opacity-0', 'pointer-events-none');
-        drawerPanel.classList.remove('scale-100');
-        drawerPanel.classList.add('scale-95');
-      }
-
-      editBtn.addEventListener('click', openDrawer);
-      closeBtn.addEventListener('click', closeDrawer);
-      drawer.addEventListener('click', (e) => {
-        if (e.target === drawer) closeDrawer();
-      });
-
-      saveBtn.addEventListener('click', () => {
-        const nameVal = document.getElementById('input-name').value.trim();
-        const roleVal = document.getElementById('input-role').value.trim();
-        const bioVal = document.getElementById('input-bio').value.trim();
-        const pbiVal = document.getElementById('input-stars').value;
-        const sqlVal = document.getElementById('input-repos').value;
-        const chgVal = document.getElementById('input-contribs').value;
-        const cmtVal = document.getElementById('input-followers').value;
-
-        const nameEl = document.querySelectorAll('.decrypt-text')[0];
-        const roleEl = document.querySelectorAll('.decrypt-text')[1];
-        const bioEl = document.querySelectorAll('.decrypt-text')[2];
-
-        if (nameVal) nameEl.setAttribute('data-original', nameVal);
-        if (roleVal) roleEl.setAttribute('data-original', roleVal);
-        if (bioVal) bioEl.setAttribute('data-original', bioVal);
-
-        const counterEls = document.querySelectorAll('.counter-number');
-        if (counterEls[0]) counterEls[0].setAttribute('data-target', pbiVal || 0);
-        if (counterEls[1]) counterEls[1].setAttribute('data-target', sqlVal || 0);
-        if (counterEls[2]) counterEls[2].setAttribute('data-target', chgVal || 0);
-        if (counterEls[3]) counterEls[3].setAttribute('data-target', cmtVal || 0);
-
-        closeDrawer();
-        setTimeout(runFullDecryption, 200);
       });
     });
   </script>
