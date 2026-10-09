@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- Status de Alerta de Segurança no Topo -->
-  <a href="https://guimemee.github.io/cyber-profile/" target="_blank" rel="noopener noreferrer">
+  <a href="https://guimemee.github.io/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/FIAP_COMPUTER_ENGINEERING-ACTIVE_CORE-ff1e42?style=for-the-badge&logo=fiap&logoColor=white" alt="FIAP Engineering Core" />
     <img src="https://img.shields.io/badge/CYBER_PORTFOLIO-LIVE_ON_GITPAGES-00d2ff?style=for-the-badge&logo=github&logoColor=black" alt="Live on GitPages" />
   </a>
@@ -9,7 +9,7 @@
   <br/><br/>
 
   <!-- Cartão do Mascote Clicável (Abre o GitHub Pages) -->
-  <a href="https://guimemee.github.io/cyber-profile/" target="_blank" rel="noopener noreferrer" title="⚠️ CLIQUE PARA ABRIR O CYBER PORTFOLIO INTERATIVO NO GITHUB PAGES!">
+  <a href="https://guimemee.github.io/" target="_blank" rel="noopener noreferrer" title="⚠️ CLIQUE PARA ABRIR O CYBER PORTFOLIO INTERATIVO NO GITHUB PAGES!">
     <img src="./hero-profile.svg" alt="Cyber Profile Hero - Guilherme Macário" width="100%" />
   </a>
 
@@ -22,7 +22,7 @@
         <p>⚠️ <b>MODO INTERATIVO DISPONÍVEL NO GITHUB PAGES</b></p>
         <p><i>O motor Markdown do GitHub desativa animações ricas, rastreamento ocular do mascote, áudio de sintetizador e decodificação Matrix neste arquivo estático.</i></p>
         <br/>
-        <a href="https://guimemee.github.io/cyber-profile/" target="_blank" rel="noopener noreferrer">
+        <a href="https://guimemee.github.io/" target="_blank" rel="noopener noreferrer">
           <img src="https://img.shields.io/badge/DESBLOQUEAR_SISTEMA_COMPLETO-ACESSAR_GITPAGE_INTERATIVO_▶-00f3ff?style=for-the-badge&logo=powershell&logoColor=black" alt="Acessar GitPage" />
         </a>
       </td>
@@ -50,7 +50,7 @@
 
   <!-- Painel de Conexões -->
   <p>
-    <a href="https://guimemee.github.io/cyber-profile/" target="_blank">
+    <a href="https://guimemee.github.io/" target="_blank">
       <img src="https://img.shields.io/badge/CYBER_PORTFOLIO_LIVE-🌐_ACESSAR_TERMINAL_ONLINE-ff1e42?style=for-the-badge" alt="Portfolio Live" />
     </a>
     <a href="https://github.com/Guimemee/fiap-computer-engineering-portfolio" target="_blank">
