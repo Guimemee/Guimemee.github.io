@@ -176,16 +176,18 @@
         </svg>
       </a>
 
-      <div>
-        <!-- Sem 'cyber core' e sem 'especialista' -->
-        <h1 class="text-sm font-semibold tracking-wide text-white flex items-center gap-2 font-cyber">
-          GUILHERME MACÁRIO
-          <span class="text-[10px] font-mono-code px-2 py-0.5 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30 font-bold">
-            FIAP • ENGENHARIA DE COMPUTAÇÃO
-          </span>
+      <div class="flex flex-col justify-center">
+        <!-- 1ª Linha: Nome -->
+        <h1 class="text-sm sm:text-base font-bold tracking-wide text-white font-cyber leading-tight">
+          Guilherme Macario da Silva
         </h1>
-        <p class="text-xs text-gray-400 font-mono-code mt-0.5">
-          Data Engineer • Data Science • IA • Machine Learning
+        <!-- 2ª Linha: Curso -->
+        <span class="text-xs font-semibold text-[var(--color-primary)] font-mono-code mt-0.5">
+          FIAP Engenharia de Computação
+        </span>
+        <!-- 3ª Linha: Áreas -->
+        <p class="text-[11px] text-gray-400 font-mono-code mt-0.5">
+          Data Engineer • Data Science
         </p>
       </div>
     </div>
@@ -430,14 +432,14 @@
               <!-- Greeting & Name -->
               <div>
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white flex items-center flex-wrap gap-2.5">
-                  <span class="decrypt-text" data-original="Olá, sou Guilherme Macário">Olá, sou Guilherme Macário</span>
+                  <span class="decrypt-text" data-original="Olá, sou Guilherme Macario da Silva">Olá, sou Guilherme Macario da Silva</span>
                   <span class="inline-block transform hover:rotate-12 transition-transform duration-300 cursor-pointer text-3xl select-none" title="Acenar!">👋</span>
                 </h2>
                 
                 <!-- Role / Subtitle -->
                 <p class="text-[var(--color-primary)] font-semibold font-mono-code text-sm sm:text-base mt-2 tracking-wide flex items-center gap-2">
                   <span class="text-gray-500">//</span>
-                  <span class="decrypt-text" data-original="FIAP Engenharia de Computação • Data Engineer • Data Science • IA • Machine Learning">FIAP Engenharia de Computação • Data Engineer • Data Science • IA • Machine Learning</span>
+                  <span class="decrypt-text" data-original="FIAP Engenharia de Computação • Data Engineer • Data Science">FIAP Engenharia de Computação • Data Engineer • Data Science</span>
                 </p>
               </div>
 
@@ -715,13 +717,15 @@
     </div>
 
     <!-- 4ª SEÇÃO: PROJETOS DE DESTAQUE & ENGENHARIA FIAP -->
-    <section class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl p-6 sm:p-8 shadow-xl">
-      <div class="flex items-center justify-between border-b border-[#232938] pb-4 mb-6">
+    <section class="w-full bg-[#0a0d14] border border-[#232938] rounded-2xl p-6 sm:p-8 shadow-xl space-y-8">
+      
+      <!-- Top Section Header -->
+      <div class="flex items-center justify-between border-b border-[#232938] pb-4">
         <div>
           <h3 class="text-lg font-bold text-white font-cyber flex items-center gap-2">
-            <span class="text-[var(--color-primary)]">//</span> PROJETOS DE DESTAQUE & ENGENHARIA FIAP
+            <span class="text-[var(--color-primary)]">//</span> PROJETOS DE ENGENHARIA FIAP
           </h3>
-          <p class="text-xs text-gray-400 font-mono-code mt-0.5">Engenharia de Computação FIAP (2022 - 2026) & Soluções Avançadas</p>
+          <p class="text-xs text-gray-400 font-mono-code mt-0.5">FIAP Challenges Corporativos & Global Solutions (2022 – 2026)</p>
         </div>
         <a href="https://github.com/Guimemee?tab=repositories" target="_blank" class="text-xs font-mono-code text-[var(--color-secondary)] hover:underline flex items-center gap-1">
           <span>Repositórios</span>
@@ -729,105 +733,226 @@
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        
-        <!-- Projeto 1: 2022 (Hospital Alemão Oswaldo Cruz) -->
-        <a href="https://github.com/Guimemee/fiap-challenge-2022-haoc" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-cyan-400 transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">2022 • 1º Ano FIAP</span>
-              <span>mar. 2022 – out. 2022</span>
-            </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-cyan-400 transition">🦿 FIAP Challenge: Hospital Alemão Oswaldo Cruz - Exoesqueleto controlado por Brain Machine</h4>
-            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Protótipo IoT voltado a otimizar a reabilitação motora e fisioterapia com suporte clínico guiado por dados. Sensores capturam força, repetições e amplitude articular com telemetria em nuvem, consolidando relatórios analíticos de evolução clínica (modelo antes/depois) para tomadas de decisão médica precisas.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>Indústria 4.0 • IoT • Telemetria</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
-          </div>
-        </a>
+      <!-- PARTE 1: FIAP CHALLENGES (Desafios Corporativos) -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-2 h-2 rounded-full bg-[var(--color-primary)]"></span>
+          <h4 class="text-sm font-bold text-white uppercase font-mono-code tracking-wider text-[var(--color-primary)]">
+            🏆 FIAP Challenges (Parcerias com Grandes Empresas)
+          </h4>
+        </div>
 
-        <!-- Projeto 2: 2023 (Natura Inovação & Retail Tech) -->
-        <a href="https://github.com/Guimemee/fiap-challenge-2023-natura" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-emerald-400 transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">2023 • 2º Ano FIAP</span>
-              <span>mar. 2023 – out. 2023</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <!-- Challenge 1: 2022 (Hospital Alemão Oswaldo Cruz) -->
+          <a href="https://github.com/Guimemee/fiap-challenge-2022-haoc" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-cyan-400 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">2022 • 1º Ano FIAP</span>
+                <span>mar. 2022 – out. 2022</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-cyan-400 transition">🦿 FIAP Challenge: Hospital Alemão Oswaldo Cruz - Exoesqueleto controlado por Brain Machine</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Protótipo IoT e wearable para reabilitação motora e suporte clínico guiado por dados. Sensores capturam força, repetições e amplitude articular com telemetria em nuvem, gerando relatórios de evolução clínica (modelo antes/depois) para decisões médicas precisas.</p>
             </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition">🌿 FIAP Challenge: Natura Inovação & Retail Tech</h4>
-            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Transformação da jornada do cliente no varejo físico através do conceito Phygital. Desenvolvimento de totem com projeção holográfica e Realidade Aumentada (AR) para exploração volumétrica de produtos, integrado a uma aplicação interativa responsiva (HTML5, CSS3, JS) com foco em UI/UX para navegação direta ou smartphone.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>Phygital • AR • UI/UX Web</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Projeto 3: 2024 (Sanofi EC Pharma) -->
-        <a href="https://github.com/Guimemee/fiap-challenge-2024-sanofi" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-purple-400 transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/30">2024 • 3º Ano FIAP</span>
-              <span>fev. 2024 – dez. 2024</span>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>Indústria 4.0 • IoT • Telemetria Clínica</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
             </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-purple-400 transition">🏆 FIAP Challenge: Sanofi EC Pharma</h4>
-            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Solução integrada para mitigar 8 gargalos críticos na Sanofi com 80% de ganho de agilidade: algoritmos de IA (NLP e Visão Computacional) para triagem documental de planilhas FMV; pipeline de dados no Oracle Cloud com Apache Sqoop e Data Lake em Hadoop (HDFS); e interfaces responsivas web e mobile em React Native.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>IA/NLP • Oracle & Hadoop • React Native</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
-          </div>
-        </a>
+          </a>
 
-        <!-- Projeto 4: 2024 (Global Solution Green Energy) -->
-        <a href="https://github.com/Guimemee/fiap-computer-engineering-portfolio" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-teal-400 transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/30">2024 • 3º Ano FIAP</span>
-              <span>jun. 2024 – nov. 2024</span>
+          <!-- Challenge 2: 2023 (Natura Inovação & Retail Tech) -->
+          <a href="https://github.com/Guimemee/fiap-challenge-2023-natura" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-emerald-400 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">2023 • 2º Ano FIAP</span>
+                <span>mar. 2023 – out. 2023</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-emerald-400 transition">🌿 FIAP Challenge: Natura Inovação & Retail Tech</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Transformação da experiência de varejo físico através do conceito Phygital. Concepção de totem holográfico com Realidade Aumentada (AR) para exploração volumétrica de produtos, integrado a aplicação interativa responsiva focada em UI/UX para navegação direta ou smartphone.</p>
             </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-teal-400 transition">⚡ Global Solution FIAP: Green Energy – Smart Charging & Gestão Energética</h4>
-            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Solução integrada de engenharia desenvolvida para modernizar a infraestrutura de eletromobilidade, combinando monitoramento e telemetria inteligente de estações de recarga, balanceamento de carga, eficiência energética preditiva e dashboards analíticos para sustentabilidade.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>Smart Charging • Gestão Energética • IoT</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Projeto 5: 2025 (SPI Meta-indústria) -->
-        <a href="https://github.com/Guimemee/fiap-challenge-2025-spi-metaindustria" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-blue-400 transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">2025 • 4º Ano FIAP</span>
-              <span>fev. 2025 – nov. 2025</span>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>Phygital • AR Holográfica • UI/UX Web</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
             </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition">🌐 FIAP Challenge: SPI / Metaindústria - Smart Robotics & Gêmeo Digital</h4>
-            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Ambientes virtuais e Gêmeos Digitais (Digital Twin) para simulação fabril 3D. Integração robótica industrial, modelagem mecânica CAD 3D no Autodesk Inventor e arquitetura de sistemas cyber-físicos para automação e rastreabilidade de manufatura inteligente.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>Digital Twin • CAD 3D • Robótica Industrial</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
-          </div>
-        </a>
+          </a>
 
-        <!-- Projeto 6: 2026 (Deep Space Network / Smart Industry) -->
-        <a href="https://github.com/Guimemee/fiap-challenge-2026-smart-industry" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
-              <span class="px-2 py-0.5 rounded bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30">2026 • 5º Ano FIAP</span>
-              <span>fev. 2026 – jun. 2026</span>
+          <!-- Challenge 3: 2024 (Sanofi EC Pharma) -->
+          <a href="https://github.com/Guimemee/fiap-challenge-2024-sanofi" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-purple-400 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/30">2024 • 3º Ano FIAP</span>
+                <span>fev. 2024 – dez. 2024</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-purple-400 transition">🏆 FIAP Challenge: Sanofi EC Pharma</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Solução tecnológica escalável para mitigar 8 gargalos críticos na Sanofi com 80% de ganho de agilidade: algoritmos de IA (NLP e Visão Computacional) para triagem documental de planilhas FMV; pipeline de Big Data no Oracle Cloud com Apache Sqoop e Hadoop (HDFS); e app mobile em React Native.</p>
             </div>
-            <h4 class="text-sm font-bold text-white group-hover:text-[var(--color-primary)] transition">🛰️ Global Solution FIAP: Deep Space Network – Infraestrutura Embarcada & Automação</h4>
-            <p class="text-xs text-gray-400 mt-2 leading-relaxed">Projeto de sistemas aeroespaciais críticos e tolerância a falhas para operações em espaço profundo. Simulação e implementação de infraestrutura embarcada resiliente, telemetria em tempo real, automação autônoma de nós de comunicação e visão computacional de alta confiabilidade.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
-            <span>Sistemas Críticos • Tolerância a Falhas • Automação</span>
-            <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
-          </div>
-        </a>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>IA/NLP • Oracle & Hadoop • React Native</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+            </div>
+          </a>
 
+          <!-- Challenge 4: 2025 (SPI Meta-indústria) -->
+          <a href="https://github.com/Guimemee/fiap-challenge-2025-spi-metaindustria" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-blue-400 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">2025 • 4º Ano FIAP</span>
+                <span>fev. 2025 – nov. 2025</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-blue-400 transition">🌐 FIAP Challenge: SPI / Metaindústria - Smart Robotics & Gêmeo Digital</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Ambientes virtuais e Gêmeos Digitais (Digital Twin) para simulação fabril 3D. Integração robótica industrial, modelagem mecânica CAD 3D no Autodesk Inventor e arquitetura de sistemas cyber-físicos para automação e rastreabilidade na manufatura inteligente.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>Digital Twin • CAD 3D • Robótica Industrial</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Challenge 5: 2026 (Smart Industry & Assistive Systems) -->
+          <a href="https://github.com/Guimemee/fiap-challenge-2026-smart-industry" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30">2026 • 5º Ano FIAP</span>
+                <span>fev. 2026 – dez. 2026</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-[var(--color-primary)] transition">⚙️ FIAP Challenge: Smart Industry & Assistive Systems</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Sistemas cyber-físicos e visão computacional aplicados à rastreabilidade, controle de qualidade industrial de alta precisão e algoritmos de inteligência preditiva para maquinários em linhas produtivas autônomas.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>Indústria 4.0 • Visão Computacional • Automação</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Card Geral: Acervo Master de Engenharia FIAP -->
+          <a href="https://github.com/Guimemee/fiap-computer-engineering-portfolio" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-yellow-400 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-yellow-400/10 text-yellow-400 border border-yellow-400/30">Acervo Completo</span>
+                <span>Grade 2022 - 2026</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-yellow-400 transition">🎓 Acervo Master de Engenharia FIAP</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Repositório mestre documentando os 5 anos de graduação em Engenharia de Computação: IoT, Sistemas Operacionais, IA, Computação Quântica, CAD, Microcontroladores e Circuitos Digitais.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>Documentação • Código • Pesquisa</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Acessar &rarr;</span>
+            </div>
+          </a>
+
+        </div>
       </div>
+
+      <!-- PARTE 2: GLOBAL SOLUTIONS (GS FIAP) -->
+      <div class="pt-2 border-t border-[#1a202c]">
+        <div class="flex items-center gap-2 mb-4 mt-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          <h4 class="text-sm font-bold text-white uppercase font-mono-code tracking-wider text-cyan-400">
+            🌐 Global Solutions FIAP (Engenharia de Ponta & Inovação)
+          </h4>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <!-- GS 1: 2022 (Electrical Mobility) -->
+          <a href="https://github.com/Guimemee/fiap-electrical-engineering-lab-skills" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-cyan-400 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">2022 • 1º Semestre</span>
+                <span>fev. 2022 – mai. 2022</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-cyan-400 transition">⚡ Global Solution FIAP: Electrical Mobility – Instrumentação & Sensoriamento de Veículos Elétricos</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Engenharia de propulsão elétrica e emissão zero. Dimensionamento, instrumentação e calibração de grandezas físicas dinâmicas (velocidade, torque, corrente e temperatura de baterias), com modelagem matemática para correção de ruídos e mitigação de perdas térmicas.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>Metrologia & Instrumentação • Propulsão Elétrica</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+            </div>
+          </a>
+
+          <!-- GS 2: 2022 (Smart Mobility) -->
+          <a href="https://github.com/Guimemee/fiap-digital-circuits-and-logic" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-blue-400 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">2022 • 2º Semestre</span>
+                <span>jun. 2022 – out. 2022</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-blue-400 transition">🚗 Global Solution FIAP: Smart Mobility – Sistema IoT & Carsharing Elétrico Autônomo</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Ecossistema de IoT automotivo e hardware embarcado para frotas de carsharing elétrico. Prototipagem de circuitos lógicos, telemetria GPS/celular, modelagem 3D em CAD da dinâmica veicular e algoritmos de cálculo para precificação e eficiência de consumo energético.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>IoT Automotivo • Modelagem 3D (CAD) • Otimização</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+            </div>
+          </a>
+
+          <!-- GS 3: 2023 (Tech for Good) -->
+          <a href="https://github.com/Guimemee/fiap-advanced-programming-and-mobile-dev" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-emerald-400 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">2023 • 1º Semestre</span>
+                <span>mar. 2023 – jul. 2023</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-emerald-400 transition">🌱 Global Solution FIAP: Tech for Good – Analisador Automático de Solo & Agricultura de Precisão</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Modernização do agronegócio e combate à fome global (ODS 2). Desenvolvimento de Analisador Automático de Solo com PCB dedicada no KiCad, telemetria agronômica contínua em Java (pH, condutividade e umidade) e fotobiologia microcontrolada com iluminação LED calibrada.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>PCB KiCad • Telemetria Java • Fotobiologia</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+            </div>
+          </a>
+
+          <!-- GS 4: 2023 (TechCare 4 All) -->
+          <a href="https://github.com/Guimemee/fiap-embedded-systems" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-amber-400 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">2023 • 2º Semestre</span>
+                <span>ago. 2023 – out. 2023</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-amber-400 transition">👕 Global Solution FIAP: TechCare 4 All – Camiseta Inteligente (Smartshirt) & E-Textile para Saúde Preventiva</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Camiseta inteligente (E-textile) para monitoramento contínuo de sinais vitais (ECG, temperatura e pressão) com sensoriamento flexível em malha têxtil. Conexão Bluetooth a app móvel, algoritmos preditivos para detecção precoce de anomalias e banco de dados médico estruturado.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>E-Textiles • Sensores Vestíveis • Telemetria Bluetooth</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+            </div>
+          </a>
+
+          <!-- GS 5: 2024 (Green Energy) -->
+          <a href="https://github.com/Guimemee/fiap-computer-engineering-portfolio" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-teal-400 transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/30">2024 • 2º Semestre</span>
+                <span>jun. 2024 – nov. 2024</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-teal-400 transition">🔋 Global Solution FIAP: Green Energy – Smart Charging & Gestão Energética para Veículos Elétricos</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Engenharia para transição energética e eletromobilidade sustentável. Monitoramento inteligente de estações de recarga elétrica, algoritmos para balanceamento de rede e eficiência energética preditiva, com telemetria em tempo real e dashboards analíticos.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>Smart Charging • Gestão Energética • Telemetria Cloud</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+            </div>
+          </a>
+
+          <!-- GS 6: 2026 (Deep Space Network) -->
+          <a href="https://github.com/Guimemee/fiap-computacao-distribuida-e-cloud-computing" target="_blank" class="group p-4 rounded-xl bg-[#0e121b] border border-[#232938] hover:border-[var(--color-primary)] transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono-code text-gray-400 mb-2">
+                <span class="px-2 py-0.5 rounded bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30">2026 • 1º Semestre</span>
+                <span>fev. 2026 – jun. 2026</span>
+              </div>
+              <h5 class="text-sm font-bold text-white group-hover:text-[var(--color-primary)] transition">🛰️ Global Solution FIAP: Deep Space Network – Infraestrutura Embarcada & Automação Aeroespacial</h5>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Engenharia de sistemas aeroespaciais críticos e tolerância a falhas para operações em espaço profundo. Simulação e implementação de protocolos embarcados resilientes, telemetria em tempo real, automação autônoma de nós de comunicação e visão computacional de alta confiabilidade.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#1a202c] flex items-center justify-between text-[11px] font-mono-code text-gray-500">
+              <span>Sistemas Críticos • Tolerância a Falhas • Aeroespacial</span>
+              <span class="text-[var(--color-secondary)] group-hover:translate-x-1 transition-transform">Ver Projeto &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
     </section>
 
     <!-- 5ª SEÇÃO: TERMINAL CLI INTERATIVO -->
@@ -1281,7 +1406,7 @@
           } else if (val === 'skills') {
             pResp.innerHTML = `[STACK]: Python (POO Avançado), PySpark, Data Science, IA & Machine Learning, T-SQL, SAP ERP/EWM, C++, Arduino/ESP32, IoT, Power Apps, Docker, Databricks, Oracle Cloud.`;
           } else if (val === 'projects') {
-            pResp.innerHTML = `Projetos FIAP (Ordem Cronológica):<br>&bull; <b>2022</b>: FIAP Challenge: Hospital Alemão Oswaldo Cruz - Exoesqueleto Brain Machine<br>&bull; <b>2023</b>: FIAP Challenge: Natura Inovação & Retail Tech<br>&bull; <b>2024</b>: FIAP Challenge: Sanofi EC Pharma<br>&bull; <b>2024</b>: Global Solution FIAP: Green Energy – Smart Charging<br>&bull; <b>2025</b>: FIAP Challenge: SPI / Metaindústria - Smart Robotics & Gêmeo Digital<br>&bull; <b>2026</b>: Global Solution FIAP: Deep Space Network – Infraestrutura Embarcada`;
+            pResp.innerHTML = `<span class="text-[var(--color-primary)] font-bold">🏆 FIAP CHALLENGES:</span><br>&bull; <b>2022</b>: HAOC - Exoesqueleto Brain Machine<br>&bull; <b>2023</b>: Natura Inovação & Retail Tech<br>&bull; <b>2024</b>: Sanofi EC Pharma<br>&bull; <b>2025</b>: SPI Metaindústria (Digital Twin)<br>&bull; <b>2026</b>: Smart Industry & Assistive Systems<br><br><span class="text-cyan-400 font-bold">🌐 GLOBAL SOLUTIONS (GS):</span><br>&bull; <b>2022.1</b>: Electrical Mobility<br>&bull; <b>2022.2</b>: Smart Mobility (Carsharing IoT)<br>&bull; <b>2023.1</b>: Tech for Good (Solo & Agricultura)<br>&bull; <b>2023.2</b>: TechCare 4 All (Smartshirt E-Textile)<br>&bull; <b>2024.2</b>: Green Energy (Smart Charging)<br>&bull; <b>2026.1</b>: Deep Space Network (Aeroespacial)`;
           } else if (val === 'contact') {
             pResp.innerHTML = `LinkedIn: <a href="https://www.linkedin.com/in/guimemee/" target="_blank" class="text-blue-400 underline">linkedin.com/in/guimemee</a><br>GitHub: <a href="https://github.com/Guimemee" target="_blank" class="text-[var(--color-secondary)] underline">github.com/Guimemee</a>`;
           } else if (val === 'clear') {
